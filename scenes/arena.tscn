@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://k73dc8s57sm1"]
+
+[ext_resource type="Script" uid="uid://ckvrjfsl31m6b" path="res://scripts/arena.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cwbxo3jd10m76" path="res://assets/stage/escenario.jpg" id="2_olpmc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1155, 45)
+
+[node name="Arena" type="Node2D" unique_id=1513575041]
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=824270831]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.8980392, 0.68235296, 0.43529412, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=648262678]
+position = Vector2(579.87494, 339.75)
+scale = Vector2(1.8586956, 2.79375)
+texture = ExtResource("2_olpmc")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=202046847]
+position = Vector2(640, 640)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=17226900]
+position = Vector2(-62.5, 17.5)
+shape = SubResource("RectangleShape2D_ground")
+debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="Player1" parent="." unique_id=1395960356 instance=ExtResource("2")]
+position = Vector2(200, 630)
+player_label = "Jugador 1"
+
+[node name="Player2" parent="." unique_id=235475205 instance=ExtResource("2")]
+position = Vector2(920, 630)
+player_label = "Jugador 2"
+start_facing_right = false
+key_left = 4194319
+key_right = 4194321
+key_jump = 4194320
+key_light_attack = 74
+key_heavy_attack = 75
+key_block = 4194322
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1806754942]
+
+[node name="HUD" type="Control" parent="UI" unique_id=757975242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="P1Name" type="Label" parent="UI/HUD" unique_id=1664883598]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.031000001
+offset_left = 75.712006
+offset_top = 16.0
+offset_right = 300.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 22
+text = "JUGADOR 1"
+
+[node name="P1HealthBg" type="ColorRect" parent="UI/HUD" unique_id=657750807]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 50.0
+offset_right = 464.0
+offset_bottom = 80.0
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="P1HealthBar" type="ProgressBar" parent="UI/HUD" unique_id=1294190003]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 50.0
+offset_right = 465.0
+offset_bottom = 78.0
+value = 100.0
+show_percentage = false
+
+[node name="P2Name" type="Label" parent="UI/HUD" unique_id=648124169]
+layout_mode = 0
+offset_left = 968.0
+offset_top = 16.0
+offset_right = 1095.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 22
+text = "JUGADOR 2"
+horizontal_alignment = 2
+
+[node name="P2HealthBg" type="ColorRect" parent="UI/HUD" unique_id=1215117957]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 46.0
+offset_right = 1101.0
+offset_bottom = 76.0
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="P2HealthBar" type="ProgressBar" parent="UI/HUD" unique_id=54997265]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 44.0
+offset_right = 1101.0
+offset_bottom = 74.0
+value = 100.0
+fill_mode = 1
+show_percentage = false
+
+[node name="TimerLabel" type="Label" parent="UI/HUD" unique_id=1285510730]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 14.0
+offset_right = 599.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 32
+text = "60"
+horizontal_alignment = 1
+
+[node name="RoundOverPanel" type="Panel" parent="UI/HUD" unique_id=1908647213]
+visible = false
+layout_mode = 0
+offset_left = 390.0
+offset_top = 260.0
+offset_right = 890.0
+offset_bottom = 460.0
+
+[node name="WinnerLabel" type="Label" parent="UI/HUD/RoundOverPanel" unique_id=1771515146]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 480.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 28
+text = "¡Jugador 1 gana!"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="UI/HUD/RoundOverPanel" unique_id=1135239743]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 120.0
+offset_right = 240.0
+offset_bottom = 160.0
+text = "Reiniciar"
+
+[node name="MenuButton" type="Button" parent="UI/HUD/RoundOverPanel" unique_id=2069583833]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 120.0
+offset_right = 440.0
+offset_bottom = 160.0
+text = "Menú"
+
+[connection signal="pressed" from="UI/HUD/RoundOverPanel/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/HUD/RoundOverPanel/MenuButton" to="." method="_on_menu_button_pressed"]
