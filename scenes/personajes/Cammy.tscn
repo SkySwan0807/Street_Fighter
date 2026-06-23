@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://bc6oq6p5viobe"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1541503418]
+[ext_resource type="PackedScene" uid="uid://cnuf3rpiok0ju" path="res://scenes/Fighter.tscn" id="1_gdwsf"]
+[ext_resource type="Texture2D" uid="uid://b80osksowcmcr" path="res://assets/characters/Cammy.png" id="2_1k7km"]
+
+[node name="Cammy" unique_id=961357591 instance=ExtResource("1_gdwsf")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1946054358]
+texture = ExtResource("2_1k7km")
+region_enabled = true
+region_rect = Rect2(0, 0, 74, 98)

@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://cnuf3rpiok0ju"]
 
-[ext_resource type="PackedScene" uid="uid://bc6oq6p5viobe" path="res://scenes/personajes/Cammy.tscn" id="1_5kbbp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k27ay"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k27ay"]
 
 [node name="Fighter" type="CharacterBody2D" unique_id=961357591]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946054358]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1963044189]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1050385601]
-shape = SubResource("RectangleShape2D_k27ay")
+shape = SubResource("CapsuleShape2D_k27ay")
 
-[node name="CharacterBody2D" parent="." unique_id=1541503418 instance=ExtResource("1_5kbbp")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=851210919]
+root_node = NodePath("../AnimationTree")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1784922042]
