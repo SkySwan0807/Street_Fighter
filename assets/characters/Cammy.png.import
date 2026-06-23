@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://75oq3tx0cabo"
-path="res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png-ee3ec81ae5be27810106cc259970c9e2.ctex"
+uid="uid://b80osksowcmcr"
+path="res://.godot/imported/Cammy.png-0f2f0b7a1545684fb7b2e0393b8f99ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png"
-dest_files=["res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png-ee3ec81ae5be27810106cc259970c9e2.ctex"]
+source_file="res://assets/characters/Cammy.png"
+dest_files=["res://.godot/imported/Cammy.png-0f2f0b7a1545684fb7b2e0393b8f99ec.ctex"]
 
 [params]
 

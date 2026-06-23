@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqmmfxfjkweha"
-path="res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png-ab86e49c0c62bbc0fa780e54ad8b02c2.ctex"
+uid="uid://damn6qsvf7avr"
+path="res://.godot/imported/Dee Jay.png-aa626af06d70d03492e556f35b55782d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png"
-dest_files=["res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png-ab86e49c0c62bbc0fa780e54ad8b02c2.ctex"]
+source_file="res://assets/characters/Dee Jay.png"
+dest_files=["res://.godot/imported/Dee Jay.png-aa626af06d70d03492e556f35b55782d.ctex"]
 
 [params]
 

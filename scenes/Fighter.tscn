@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cnuf3rpiok0ju"]
+
+[ext_resource type="PackedScene" uid="uid://bc6oq6p5viobe" path="res://scenes/personajes/Cammy.tscn" id="1_5kbbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k27ay"]
+
+[node name="Fighter" type="CharacterBody2D" unique_id=961357591]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1946054358]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1050385601]
+shape = SubResource("RectangleShape2D_k27ay")
+
+[node name="CharacterBody2D" parent="." unique_id=1541503418 instance=ExtResource("1_5kbbp")]
