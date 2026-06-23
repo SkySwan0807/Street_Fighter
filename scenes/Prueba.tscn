@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c4xo3l31yronu"]
+
+[ext_resource type="PackedScene" uid="uid://mp2m28h8sinh" path="res://scenes/personajes/dee_jay.tscn" id="1_e66qu"]
+[ext_resource type="PackedScene" uid="uid://bc6oq6p5viobe" path="res://scenes/personajes/cammy.tscn" id="2_iyvkr"]
+
+[node name="Prueba" type="Node2D" unique_id=381850253]
+
+[node name="Fighter" parent="." unique_id=961357591 instance=ExtResource("1_e66qu")]
+position = Vector2(345, 337)
+
+[node name="Cammy" parent="." unique_id=1947028168 instance=ExtResource("2_iyvkr")]
+position = Vector2(531, 178)

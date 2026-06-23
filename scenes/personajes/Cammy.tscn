@@ -281,7 +281,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"golpe_cercano_debil",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -301,7 +301,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"golpe_cercano_fuerte",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -318,7 +318,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"golpe_cercano_medio",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -444,7 +444,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("74_8myq4")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("75_8oal3")
 }, {
 "duration": 1.0,
@@ -452,7 +452,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"patada_cercano_medio",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -607,9 +607,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_vhmb5"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxm6u"]
+_data = {
+&"idle": SubResource("Animation_vhmb5")
+}
+
 [node name="Cammy" unique_id=961357591 instance=ExtResource("1_gdwsf")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_m60ao")
-animation = &"patada_cercano_fuerte"
-frame_progress = 0.63541263
+animation = &"salto"
+frame_progress = 0.650891
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=851210919]
+libraries/ = SubResource("AnimationLibrary_sxm6u")
