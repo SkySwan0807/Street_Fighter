@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://bb142v86ft36p"]
+
+[ext_resource type="Texture2D" uid="uid://cqmmfxfjkweha" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="1_x1f5n"]
+
+[resource]
+atlas = ExtResource("1_x1f5n")
+region = Rect2(131.41602, 775.08, 98.28171, 116.15997)

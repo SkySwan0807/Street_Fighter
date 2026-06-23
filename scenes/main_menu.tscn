@@ -8,6 +8,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1")
 
 [node name="Background" type="ColorRect" parent="." unique_id=785920000]
@@ -16,6 +18,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=129159691]
 position = Vector2(584.00006, 328)
@@ -24,12 +28,12 @@ texture = ExtResource("2_ekxnf")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=973117024]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 1.021
 anchor_bottom = 1.0
 offset_left = -7.0
 offset_top = 316.0
-offset_right = -14.0
+offset_right = -38.192017
 offset_bottom = 182.0
 grow_horizontal = 2
 grow_vertical = 2
