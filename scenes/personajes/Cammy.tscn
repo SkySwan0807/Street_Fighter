@@ -355,8 +355,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("54_3ig5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_5kpmv")
 }],
-"loop": true,
+"loop": false,
 "name": &"golpe_fuerte",
 "speed": 5.0
 }, {
@@ -619,8 +622,9 @@ _data = {
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_m60ao")
-animation = &"salto"
-frame_progress = 0.650891
+animation = &"golpe_fuerte"
+frame = 6
+frame_progress = 1.0
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=851210919]
 libraries/ = SubResource("AnimationLibrary_sxm6u")

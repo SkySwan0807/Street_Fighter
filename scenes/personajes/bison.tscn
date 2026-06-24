@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://bde1nuy30mihl"]
+
+[ext_resource type="PackedScene" uid="uid://cnuf3rpiok0ju" path="res://scenes/Fighter.tscn" id="1_7hrgj"]
+[ext_resource type="Texture2D" uid="uid://bbesyhjycgq5s" path="res://assets/characters/bison/10-0.png" id="2_qi4mp"]
+[ext_resource type="Texture2D" uid="uid://ccqfa5hkcj51d" path="res://assets/characters/bison/10-1.png" id="3_f3vgw"]
+[ext_resource type="Texture2D" uid="uid://x4ujae405rmn" path="res://assets/characters/bison/11-0.png" id="4_m1pso"]
+[ext_resource type="Texture2D" uid="uid://b3m2hk058ggjv" path="res://assets/characters/bison/121-0.png" id="5_2seyr"]
+[ext_resource type="Texture2D" uid="uid://b8voqfd4r0tof" path="res://assets/characters/bison/20-0.png" id="5_unsot"]
+[ext_resource type="Texture2D" uid="uid://bk11crg8hsjxc" path="res://assets/characters/bison/120-0.png" id="6_fi6c6"]
+[ext_resource type="Texture2D" uid="uid://b2w6diobvokwe" path="res://assets/characters/bison/20-1.png" id="6_udsmq"]
+[ext_resource type="Texture2D" uid="uid://dkewbkt1kkp4a" path="res://assets/characters/bison/130-0.png" id="7_m82ti"]
+[ext_resource type="Texture2D" uid="uid://l1rm26unnmee" path="res://assets/characters/bison/20-2.png" id="7_ridvx"]
+[ext_resource type="Texture2D" uid="uid://n7lqvk5q7vab" path="res://assets/characters/bison/6-0.png" id="8_fwytr"]
+[ext_resource type="Texture2D" uid="uid://6m0aibqa77yj" path="res://assets/characters/bison/6-1.png" id="9_dtjki"]
+[ext_resource type="Texture2D" uid="uid://bs8vc3sr11ead" path="res://assets/characters/bison/6-2.png" id="10_4vmfl"]
+[ext_resource type="Texture2D" uid="uid://bu2p04o8fs4n8" path="res://assets/characters/bison/5-0.png" id="11_5cmsf"]
+[ext_resource type="Texture2D" uid="uid://bqbm48anltvdv" path="res://assets/characters/bison/5-1.png" id="12_dg523"]
+[ext_resource type="Texture2D" uid="uid://cxcvuk1h3oltn" path="res://assets/characters/bison/5-2.png" id="13_r5a2x"]
+[ext_resource type="Texture2D" uid="uid://xr1mtdjlw7t7" path="res://assets/characters/bison/0-0.png" id="14_8rupo"]
+[ext_resource type="Texture2D" uid="uid://dpnjj3tt0an14" path="res://assets/characters/bison/0-1.png" id="15_cirmn"]
+[ext_resource type="Texture2D" uid="uid://cqpt8qp1vcg7h" path="res://assets/characters/bison/0-2.png" id="16_kiqqv"]
+[ext_resource type="Texture2D" uid="uid://cuqvbknl8tx84" path="res://assets/characters/bison/40-0.png" id="17_2seyr"]
+[ext_resource type="Texture2D" uid="uid://cequ0amsqvnp7" path="res://assets/characters/bison/200-0.png" id="17_ewbq0"]
+[ext_resource type="Texture2D" uid="uid://ceqdkt8ty2s2m" path="res://assets/characters/bison/41-0.png" id="18_fi6c6"]
+[ext_resource type="Texture2D" uid="uid://de3x5v3v5p5wt" path="res://assets/characters/bison/200-3.png" id="18_hmk20"]
+[ext_resource type="Texture2D" uid="uid://cye1lx5e8wi3n" path="res://assets/characters/bison/41-1.png" id="19_m82ti"]
+[ext_resource type="Texture2D" uid="uid://cfpmmvobfwfww" path="res://assets/characters/bison/210-0.png" id="19_rhxbi"]
+[ext_resource type="Texture2D" uid="uid://c622m3e8v0cme" path="res://assets/characters/bison/210-2.png" id="20_3cpyx"]
+[ext_resource type="Texture2D" uid="uid://dwagff7btanc4" path="res://assets/characters/bison/41-2.png" id="20_ewbq0"]
+[ext_resource type="Texture2D" uid="uid://b4dsfn3dyqn35" path="res://assets/characters/bison/210-7.png" id="21_e4y4n"]
+[ext_resource type="Texture2D" uid="uid://x8552kvdchy8" path="res://assets/characters/bison/210-4.png" id="22_q0lds"]
+[ext_resource type="Texture2D" uid="uid://lhvnhmpt2l73" path="res://assets/characters/bison/181-0.png" id="30_6xdp1"]
+[ext_resource type="Texture2D" uid="uid://oxte6y2vgk2t" path="res://assets/characters/bison/180-0.png" id="31_f23a3"]
+[ext_resource type="Texture2D" uid="uid://cwf0uuv5tguum" path="res://assets/characters/bison/180-1.png" id="32_vt5u3"]
+[ext_resource type="Texture2D" uid="uid://bsy22ifhj2nul" path="res://assets/characters/bison/180-2.png" id="33_hdpye"]
+[ext_resource type="Texture2D" uid="uid://h4dhmqoqrx82" path="res://assets/characters/bison/180-3.png" id="34_v7ono"]
+[ext_resource type="Texture2D" uid="uid://fin5gs5cau5x" path="res://assets/characters/bison/180-4.png" id="35_a06xs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmk20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qi4mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f3vgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m1pso")
+}],
+"loop": true,
+"name": &"agacharse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2seyr")
+}],
+"loop": true,
+"name": &"bloqueo_agachado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_fi6c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m82ti")
+}],
+"loop": true,
+"name": &"bloqueo_parado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_unsot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_udsmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ridvx")
+}],
+"loop": true,
+"name": &"caminar_adelante",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ridvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_udsmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_unsot")
+}],
+"loop": true,
+"name": &"caminar_atras",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fwytr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dtjki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4vmfl")
+}],
+"loop": true,
+"name": &"giro_agachado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_5cmsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dg523")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r5a2x")
+}],
+"loop": true,
+"name": &"giro_parado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("17_ewbq0")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_hmk20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ewbq0")
+}],
+"loop": true,
+"name": &"golpe_debil",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_rhxbi")
+}, {
+"duration": 1.5,
+"texture": ExtResource("20_3cpyx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("21_e4y4n")
+}, {
+"duration": 1.5,
+"texture": ExtResource("20_3cpyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rhxbi")
+}],
+"loop": false,
+"name": &"golpe_fuerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_rhxbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3cpyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q0lds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3cpyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rhxbi")
+}],
+"loop": true,
+"name": &"golpe_medio",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_8rupo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cirmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kiqqv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_2seyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fi6c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m82ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ewbq0")
+}],
+"loop": true,
+"name": &"salto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_6xdp1")
+}],
+"loop": true,
+"name": &"victoria_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_f23a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_vt5u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_hdpye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_v7ono")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_a06xs")
+}],
+"loop": true,
+"name": &"victoria_2",
+"speed": 5.0
+}]
+
+[node name="Fighter" unique_id=961357591 instance=ExtResource("1_7hrgj")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
+sprite_frames = SubResource("SpriteFrames_hmk20")
+animation = &"golpe_fuerte"
+frame = 4
+frame_progress = 1.0

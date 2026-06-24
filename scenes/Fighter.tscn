@@ -139,6 +139,7 @@ sprite_frames = SubResource("SpriteFrames_k27ay")
 animation = &"victoria_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1050385601]
+visible = false
 shape = SubResource("CapsuleShape2D_k27ay")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=851210919]
@@ -148,3 +149,5 @@ root_node = NodePath("../AnimationTree")
 root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeStateMachine_k27ay")
 anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

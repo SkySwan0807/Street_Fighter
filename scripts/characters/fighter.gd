@@ -4,13 +4,19 @@ enum State {
 	IDLE,
 	FORWARD,
 	BACKWARDS,
-	JUMP,
-	ATTACK,
+	PUNCH,
 	HURT
 }
 
+enum Potencias {
+	DEBIL,
+	MEDIO,
+	FUERTE
+}
+
 var state = State.IDLE
-var speed = 300
+var potencia = Potencias.DEBIL
+var speed = 200
 
 func _physics_process(_delta):
 	match state:
@@ -23,12 +29,18 @@ func _physics_process(_delta):
 		State.BACKWARDS:
 			state_backwards(_delta)
 			
+		State.PUNCH:
+			match potencia:
+				Potencias.FUERTE:
+					state_golpe_fuerte(_delta)
+			
 	move_and_slide()
 			
 func state_idle(_delta):
 	
 	velocity.x = 0
-	$AnimatedSprite2D.play("idle")
+	if $AnimatedSprite2D.animation != "idle":
+		$AnimatedSprite2D.play("idle")
 
 	if Input.is_action_pressed("derecha_p1"):
 		change_state(State.FORWARD)
@@ -36,8 +48,9 @@ func state_idle(_delta):
 	if Input.is_action_pressed("izquierda_p1"):
 		change_state(State.BACKWARDS)
 
-	if Input.is_action_just_pressed("attack"):
-		change_state(State.ATTACK)
+	if Input.is_action_just_pressed("golpe_fuerte_p1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.PUNCH)
 
 
 func state_forward(_delta):
@@ -50,8 +63,9 @@ func state_forward(_delta):
 
 	velocity.x = direction * speed
 
-	if Input.is_action_just_pressed("attack"):
-		change_state(State.ATTACK)
+	if Input.is_action_just_pressed("golpe_fuerte_p1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.PUNCH)
 		
 func state_backwards(_delta):
 	$AnimatedSprite2D.play("caminar_atras")
@@ -63,11 +77,43 @@ func state_backwards(_delta):
 
 	velocity.x = direction * speed
 
-	if Input.is_action_just_pressed("attack"):
-		change_state(State.ATTACK)
+	if Input.is_action_just_pressed("golpe_fuerte_p1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.PUNCH)
+
+func state_golpe_fuerte(_delta):
+	velocity.x = 0
+	print("Golpe Fuerte")
 
 func change_state(new_state):
 	if state == new_state:
 		return
 
 	state = new_state
+
+	match state:
+		State.IDLE:
+			$AnimatedSprite2D.play("idle")
+
+		State.FORWARD:
+			$AnimatedSprite2D.play("caminar_adelante")
+
+		State.BACKWARDS:
+			$AnimatedSprite2D.play("caminar_atras")
+
+		State.PUNCH:
+			match potencia:
+				Potencias.FUERTE:
+					$AnimatedSprite2D.play("golpe_fuerte")
+
+func change_potencia(new_potencia):
+	if potencia == new_potencia:
+		return
+	potencia = new_potencia
+	
+func _on_animated_sprite_2d_animation_finished():
+	print("Animación terminada:", $AnimatedSprite2D.animation)
+
+	if $AnimatedSprite2D.animation == "golpe_fuerte":
+		print("Cambio de estado a Idle")
+		change_state(State.IDLE)

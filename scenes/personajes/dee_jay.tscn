@@ -256,7 +256,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("48_yomba")
 }],
-"loop": true,
+"loop": false,
 "name": &"golpe_fuerte",
 "speed": 5.0
 }, {
@@ -469,4 +469,6 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_vj3fg")
-animation = &"agacharse"
+animation = &"golpe_fuerte"
+frame = 6
+frame_progress = 1.0
