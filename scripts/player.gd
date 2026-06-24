@@ -5,8 +5,8 @@ class_name Fighter
 ##
 ## CÓMO AGREGAR UN PERSONAJE NUEVO:
 ##   Duplica player.tscn, cambia los valores exportados (vida, velocidad,
-##   daños, color del nodo "Visual" o reemplázalo por un AnimatedSprite2D)
-##   e instáncialo en una nueva escena de arena. No hace falta tocar código.
+##   daños) y crea su archivo *_spriteframes.tres en assets/characters/.
+##   No hace falta tocar código.
 ##
 ## CÓMO AGREGAR UN GOLPE NUEVO:
 ##   Agrega variables exportadas (daño/duración/empuje) y una rama nueva
@@ -57,7 +57,7 @@ var hurt_timer: float = 0.0
 ## hacia dónde mirar.
 var opponent: Fighter = null
 
-@onready var visual: ColorRect = $Visual
+@onready var animated_sprite: AnimatedSprite2D = $Visual
 @onready var hitbox: Area2D = $Hitbox
 @onready var hurtbox: Area2D = $Hurtbox
 
@@ -102,6 +102,8 @@ func _physics_process(delta: float) -> void:
 			state = State.FALL
 		elif state == State.FALL:
 			state = State.IDLE if abs(velocity.x) < 1.0 else State.WALK
+
+	_update_animation()
 
 
 func _face_opponent() -> void:
@@ -216,6 +218,36 @@ func _die() -> void:
 
 
 func _apply_facing() -> void:
-	# Espejar la escala invierte automáticamente el dibujo y los hitboxes
-	# hijos, así que no hace falta mover nada más a mano.
 	scale.x = 1.0 if facing_right else -1.0
+
+
+func setup_character(char_name: String) -> void:
+	var path: String = "res://assets/characters/%s_spriteframes.tres" % char_name
+	if ResourceLoader.exists(path):
+		animated_sprite.sprite_frames = load(path) as SpriteFrames
+	_update_animation()
+
+
+func _update_animation() -> void:
+	if not animated_sprite.sprite_frames:
+		return
+	var anim_name: String = ""
+	match state:
+		State.IDLE:
+			anim_name = "quieto"
+		State.WALK:
+			anim_name = "caminar"
+		State.JUMP:
+			anim_name = "saltar"
+		State.FALL:
+			anim_name = "caer"
+		State.ATTACK:
+			anim_name = "golpe_ligero" if attack_id == "light" else "golpe_pesado"
+		State.BLOCK:
+			anim_name = "bloquear"
+		State.HURT:
+			anim_name = "recibir_daño"
+		State.KO:
+			anim_name = "nocaut"
+	if anim_name != "" and animated_sprite.sprite_frames.has_animation(anim_name):
+		animated_sprite.play(anim_name)

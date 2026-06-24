@@ -30,6 +30,9 @@ func _ready() -> void:
 	$UI/HUD/P1Name.text = Eleccion.player1_character.to_upper()
 	$UI/HUD/P2Name.text = Eleccion.player2_character.to_upper()
 
+	player1.setup_character(Eleccion.player1_character)
+	player2.setup_character(Eleccion.player2_character)
+
 	round_over_panel.visible = false
 	_update_timer_label()
 	print("Eleccion.player1_character = ", Eleccion.player1_character)
