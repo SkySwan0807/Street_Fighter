@@ -9,6 +9,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 size = Vector2(1155, 45)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ft05"]
+size = Vector2(99.5, 646)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ag8t"]
+size = Vector2(92, 672.5)
+
 [sub_resource type="Theme" id="Theme_dpxgc"]
 default_font = ExtResource("4_7ft05")
 default_font_size = 9
@@ -20,11 +26,13 @@ script = ExtResource("1")
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.8980392, 0.68235296, 0.43529412, 0)
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=648262678]
-position = Vector2(579.87494, 339.75)
+position = Vector2(580.00006, 340)
 scale = Vector2(1.8586956, 2.79375)
 texture = ExtResource("2_olpmc")
+metadata/_edit_lock_ = true
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=202046847]
 position = Vector2(640, 640)
@@ -34,6 +42,14 @@ collision_mask = 0
 position = Vector2(-62.5, 17.5)
 shape = SubResource("RectangleShape2D_ground")
 debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" unique_id=802601125]
+position = Vector2(-688.25, -303)
+shape = SubResource("RectangleShape2D_7ft05")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" unique_id=246299163]
+position = Vector2(565, -300.25)
+shape = SubResource("RectangleShape2D_4ag8t")
 
 [node name="Player1" parent="." unique_id=1395960356 instance=ExtResource("2")]
 position = Vector2(200, 630)
@@ -61,17 +77,22 @@ offset_top = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
-[node name="P1Name" type="Label" parent="UI/HUD" unique_id=1664883598]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.031000001
-offset_left = 75.712006
-offset_top = 16.0
-offset_right = 300.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 22
-text = "JUGADOR 1"
+[node name="Player 1" type="Sprite2D" parent="UI/HUD" unique_id=131651854]
+position = Vector2(957, 26.999954)
+scale = Vector2(2.8354168, 1.7222222)
+texture = ExtResource("4_4ag8t")
+region_enabled = true
+region_rect = Rect2(353.18408, 87.50997, 60.105225, 16.225784)
+metadata/_edit_lock_ = true
+
+[node name="1" type="Sprite2D" parent="UI/HUD/Player 1" unique_id=875136937]
+position = Vector2(-252.93593, 0.82462084)
+scale = Vector2(0.66080517, 0.9424869)
+texture = ExtResource("4_4ag8t")
+region_enabled = true
+region_rect = Rect2(102.99044, 167.73776, 13.995216, 19.5085)
 
 [node name="P1HealthBg" type="ColorRect" parent="UI/HUD" unique_id=657750807]
 layout_mode = 0
@@ -90,15 +111,21 @@ offset_bottom = 84.0
 value = 100.0
 show_percentage = false
 
-[node name="P2Name" type="Label" parent="UI/HUD" unique_id=648124169]
-layout_mode = 0
-offset_left = 968.0
-offset_top = 16.0
-offset_right = 1095.0
-offset_bottom = 47.0
-theme_override_font_sizes/font_size = 22
-text = "JUGADOR 2"
-horizontal_alignment = 2
+[node name="Player2" type="Sprite2D" parent="UI/HUD" unique_id=1524246511]
+position = Vector2(129.00003, 32)
+scale = Vector2(2.7966135, 1.8333333)
+texture = ExtResource("4_4ag8t")
+region_enabled = true
+region_rect = Rect2(353.18408, 87.54642, 60.105225, 16.189339)
+metadata/_edit_lock_ = true
+
+[node name="2" type="Sprite2D" parent="UI/HUD/Player2" unique_id=1168497888]
+position = Vector2(338.98135, -4.363636)
+scale = Vector2(0.6398719, 0.857143)
+texture = ExtResource("4_4ag8t")
+region_enabled = true
+region_rect = Rect2(116.10607, 166.70819, 19.084389, 21.20488)
+metadata/_edit_lock_ = true
 
 [node name="P2HealthBg" type="ColorRect" parent="UI/HUD" unique_id=1215117957]
 layout_mode = 0

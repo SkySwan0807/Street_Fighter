@@ -32,9 +32,7 @@ func select_character(character:String, button:TextureButton):
 
 		player2_character = character
 		click_count += 1
-		
-		button.button_pressed = true
-		
+
 		print("Jugador 2 eligió: ", character)
 		button.disabled = true
 
@@ -45,7 +43,8 @@ func start_fight():
 	print("P1: ",player1_character)
 	print("P2: ",player2_character)
 
-
+	#Los personajes elegidos se guardan en una variable global llamado 
+	#Eleccion.player1_character	
 	Eleccion.player1_character = player1_character
 	Eleccion.player2_character = player2_character
 

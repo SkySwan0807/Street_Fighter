@@ -29,6 +29,7 @@ func _ready() -> void:
 
 	round_over_panel.visible = false
 	_update_timer_label()
+	#Aca se les llama a los personajes seleccionados
 	print("Eleccion.player1_character = ", Eleccion.player1_character)
 	print("Eleccion.player2_character = ", Eleccion.player2_character)
 
