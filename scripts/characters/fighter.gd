@@ -5,6 +5,7 @@ enum State {
 	FORWARD,
 	BACKWARDS,
 	PUNCH,
+	KICK,
 	HURT
 }
 
