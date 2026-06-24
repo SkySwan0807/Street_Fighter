@@ -2,10 +2,63 @@
 
 [ext_resource type="Script" uid="uid://q2nhd4pgt3mk" path="res://scripts/eleccion.gd" id="1_kupfp"]
 [ext_resource type="Texture2D" uid="uid://if148nqqiddi" path="res://assets/stage/arena-de-pixel-art-street-al-atardecer-con-vibraciones-de-graffiti-para-diseño-de-juegos-o-afiches-377319120.webp" id="2_ty4dq"]
-[ext_resource type="Texture2D" uid="uid://bb142v86ft36p" path="res://Recursos/ryuRetrato.tres" id="3_ty4dq"]
-[ext_resource type="Texture2D" uid="uid://64yhv5xpqu8g" path="res://Recursos/DeeJayRetrato.tres" id="3_vl7ki"]
-[ext_resource type="Texture2D" uid="uid://bgkekibbacpm3" path="res://Recursos/CammiRetrato.tres" id="4_r5ylk"]
-[ext_resource type="Texture2D" uid="uid://dphtrvva0mrbl" path="res://Recursos/MBisonRetrato.tres" id="5_r5ylk"]
+[ext_resource type="Texture2D" uid="uid://bb142v86ft36p" path="res://assets/icons/ryuRetrato.tres" id="3_ty4dq"]
+[ext_resource type="Texture2D" uid="uid://64yhv5xpqu8g" path="res://assets/icons/DeeJayRetrato.tres" id="3_vl7ki"]
+[ext_resource type="Texture2D" uid="uid://bgkekibbacpm3" path="res://assets/icons/CammiRetrato.tres" id="4_r5ylk"]
+[ext_resource type="Texture2D" uid="uid://cqmmfxfjkweha" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="5_2dmo0"]
+[ext_resource type="Texture2D" uid="uid://dphtrvva0mrbl" path="res://assets/icons/MBisonRetrato.tres" id="5_r5ylk"]
+[ext_resource type="Texture2D" uid="uid://damn6qsvf7avr" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Dee Jay.png" id="7_7old1"]
+[ext_resource type="Texture2D" uid="uid://d3clsj4atlnly" path="res://assets/characters/Character Select (Champion Edition).png" id="7_cxbwk"]
+[ext_resource type="Texture2D" uid="uid://b80osksowcmcr" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Cammy.png" id="8_d7phe"]
+[ext_resource type="Texture2D" uid="uid://75oq3tx0cabo" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png" id="9_ufkva"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufkva"]
+atlas = ExtResource("5_2dmo0")
+region = Rect2(130.1998, 267.21185, 99.00003, 113.30005)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dmo0"]
+atlas = ExtResource("5_2dmo0")
+region = Rect2(132.42113, 15.526348, 96.47374, 110.32901)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8u3s"]
+atlas = ExtResource("5_2dmo0")
+region = Rect2(131, 274.258, 98, 106)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80upp"]
+atlas = ExtResource("7_7old1")
+region = Rect2(282.2998, 7556.4316, 141.90002, 118.80029)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpooe"]
+atlas = ExtResource("7_7old1")
+region = Rect2(177.29974, 8098.2085, 141.90005, 122.1001)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt56b"]
+atlas = ExtResource("7_7old1")
+region = Rect2(281.9091, 7556.818, 137.2727, 122.72705)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihc0b"]
+atlas = ExtResource("8_d7phe")
+region = Rect2(842.0663, 2.6429138, 109.09094, 111.57028)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j60vi"]
+atlas = ExtResource("8_d7phe")
+region = Rect2(389.31888, 6.6362686, 110.90912, 108.18185)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_queey"]
+atlas = ExtResource("8_d7phe")
+region = Rect2(834.9999, 4.5769806, 114.400024, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7phe"]
+atlas = ExtResource("9_ufkva")
+region = Rect2(256.46628, 1213.8672, 129.08957, 107.233154)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7old1"]
+atlas = ExtResource("9_ufkva")
+region = Rect2(388.79358, 1213.4592, 127.571106, 107.814575)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2bvh"]
+atlas = ExtResource("9_ufkva")
+region = Rect2(257.85873, 1212.4644, 132.23138, 109.691895)
 
 [node name="Eleccion" type="Control" unique_id=1026484189]
 layout_mode = 3
@@ -31,63 +84,77 @@ offset_bottom = 669.0
 texture = ExtResource("2_ty4dq")
 metadata/_edit_lock_ = true
 
-[node name="TitleLabel" type="Label" parent="." unique_id=960639899]
-layout_mode = 0
-offset_left = 113.0
-offset_top = 42.0
-offset_right = 433.0
-offset_bottom = 76.0
-scale = Vector2(3, 3)
-theme_type_variation = &"HeaderMedium"
-theme_override_colors/font_color = Color(0.74286336, 0.91, 0.38220003, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "SELECCIONA TU LUCHADOR"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="." unique_id=1852334301]
-y_sort_enabled = true
-layout_mode = 0
-offset_left = 347.0
-offset_top = 167.0
-offset_right = 805.0
-offset_bottom = 537.0
-localize_numeral_system = false
-theme_override_constants/h_separation = 150
-theme_override_constants/v_separation = 100
-columns = 2
-metadata/_edit_lock_ = true
-
-[node name="RyuButton" type="TextureButton" parent="GridContainer" unique_id=2030723270]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-size_flags_stretch_ratio = 6.75
-texture_normal = ExtResource("3_ty4dq")
-
-[node name="DeeJayButton" type="TextureButton" parent="GridContainer" unique_id=1253178614]
-layout_mode = 2
-texture_normal = ExtResource("3_vl7ki")
-stretch_mode = 1
-
-[node name="CammiButton" type="TextureButton" parent="GridContainer" unique_id=1290930652]
-layout_mode = 2
-texture_normal = ExtResource("4_r5ylk")
-stretch_mode = 1
-
-[node name="MBisonButton" type="TextureButton" parent="GridContainer" unique_id=240213468]
-layout_mode = 2
-texture_normal = ExtResource("5_r5ylk")
-stretch_mode = 1
-
 [node name="BackButton" type="Button" parent="." unique_id=2036748672]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 0
-offset_left = 443.0
-offset_top = 566.0
-offset_right = 743.0
-offset_bottom = 616.0
+offset_left = 457.0
+offset_top = 593.0
+offset_right = 757.0
+offset_bottom = 643.0
 text = "VOLVER AL MENU DE INICIO"
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=832292307]
+position = Vector2(578.00006, 100.00001)
+scale = Vector2(4.4632936, 7.0704403)
+texture = ExtResource("7_cxbwk")
+region_enabled = true
+region_rect = Rect2(153.62955, 140.47217, 126.66794, 17.882538)
+
+[node name="RyuButton" type="TextureButton" parent="." unique_id=2030723270]
+layout_mode = 0
+offset_left = 165.00003
+offset_top = 205.0
+offset_right = 260.03732
+offset_bottom = 315.0
+scale = Vector2(1.7045943, 1.7109478)
+size_flags_horizontal = 6
+size_flags_vertical = 10
+size_flags_stretch_ratio = 6.75
+texture_normal = ExtResource("3_ty4dq")
+texture_pressed = SubResource("AtlasTexture_ufkva")
+texture_hover = SubResource("AtlasTexture_2dmo0")
+texture_disabled = SubResource("AtlasTexture_g8u3s")
+
+[node name="DeeJayButton" type="TextureButton" parent="." unique_id=1253178614]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 370.0
+offset_right = 948.0
+offset_bottom = 564.0
+toggle_mode = true
+texture_normal = ExtResource("3_vl7ki")
+texture_pressed = SubResource("AtlasTexture_80upp")
+texture_hover = SubResource("AtlasTexture_qpooe")
+texture_disabled = SubResource("AtlasTexture_kt56b")
+stretch_mode = 1
+
+[node name="CammiButton" type="TextureButton" parent="." unique_id=1290930652]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 209.0
+offset_right = 709.0
+offset_bottom = 389.0
+texture_normal = ExtResource("4_r5ylk")
+texture_pressed = SubResource("AtlasTexture_ihc0b")
+texture_hover = SubResource("AtlasTexture_j60vi")
+texture_disabled = SubResource("AtlasTexture_queey")
+stretch_mode = 1
+
+[node name="MBisonButton" type="TextureButton" parent="." unique_id=240213468]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 402.0
+offset_right = 456.0
+offset_bottom = 507.0
+scale = Vector2(1.6185513, 1.5054919)
+texture_normal = ExtResource("5_r5ylk")
+texture_pressed = SubResource("AtlasTexture_d7phe")
+texture_hover = SubResource("AtlasTexture_7old1")
+texture_disabled = SubResource("AtlasTexture_x2bvh")
+stretch_mode = 1
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="RyuButton" to="." method="_on_ryu_button_pressed"]
+[connection signal="pressed" from="DeeJayButton" to="." method="_on_dee_jay_button_pressed"]
+[connection signal="pressed" from="CammiButton" to="." method="_on_cammi_button_pressed"]
+[connection signal="pressed" from="MBisonButton" to="." method="_on_m_bison_button_pressed"]

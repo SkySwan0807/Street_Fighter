@@ -29,6 +29,8 @@ func _ready() -> void:
 
 	round_over_panel.visible = false
 	_update_timer_label()
+	print("Eleccion.player1_character = ", Eleccion.player1_character)
+	print("Eleccion.player2_character = ", Eleccion.player2_character)
 
 
 func _process(delta: float) -> void:

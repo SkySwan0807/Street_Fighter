@@ -3,9 +3,15 @@
 [ext_resource type="Script" uid="uid://ckvrjfsl31m6b" path="res://scripts/arena.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cwbxo3jd10m76" path="res://assets/stage/escenario.jpg" id="2_olpmc"]
+[ext_resource type="Texture2D" uid="uid://0l4puo40yexd" path="res://assets/characters/Game Text, Fonts, & Health Bars.png" id="4_4ag8t"]
+[ext_resource type="FontFile" uid="uid://b1rgk46irddg4" path="res://assets/stage/ARCADE_I.TTF" id="4_7ft05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 size = Vector2(1155, 45)
+
+[sub_resource type="Theme" id="Theme_dpxgc"]
+default_font = ExtResource("4_7ft05")
+default_font_size = 9
 
 [node name="Arena" type="Node2D" unique_id=1513575041]
 script = ExtResource("1")
@@ -79,8 +85,8 @@ color = Color(0.15, 0.15, 0.15, 1)
 layout_mode = 0
 offset_left = 40.0
 offset_top = 50.0
-offset_right = 465.0
-offset_bottom = 78.0
+offset_right = 458.0
+offset_bottom = 84.0
 value = 100.0
 show_percentage = false
 
@@ -112,15 +118,30 @@ value = 100.0
 fill_mode = 1
 show_percentage = false
 
+[node name="Sprite2D" type="Sprite2D" parent="UI/HUD" unique_id=1622553254]
+position = Vector2(581, 35)
+scale = Vector2(2.9884622, 3.7500007)
+texture = ExtResource("4_4ag8t")
+region_enabled = true
+region_rect = Rect2(351.98175, 108.39387, 65.51462, 18.632599)
+metadata/_edit_lock_ = true
+
 [node name="TimerLabel" type="Label" parent="UI/HUD" unique_id=1285510730]
+modulate = Color(0.827451, 0.14117648, 0.14117648, 1)
+show_behind_parent = true
+top_level = true
 layout_mode = 0
-offset_left = 499.0
-offset_top = 14.0
-offset_right = 599.0
-offset_bottom = 59.0
-theme_override_font_sizes/font_size = 32
+offset_left = 509.0
+offset_top = 71.0
+offset_right = 656.0
+offset_bottom = 147.0
+scale = Vector2(1, 1.0290294)
+theme = SubResource("Theme_dpxgc")
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 75
 text = "60"
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="RoundOverPanel" type="Panel" parent="UI/HUD" unique_id=1908647213]
 visible = false

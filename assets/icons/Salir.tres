@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dadmdtrqklcq8"]
+
+[ext_resource type="Texture2D" uid="uid://0l4puo40yexd" path="res://assets/characters/Game Text, Fonts, & Health Bars.png" id="1_fkce5"]
+
+[resource]
+atlas = ExtResource("1_fkce5")
+region = Rect2(367.28473, 71.3178, 111.79562, 15.0262985)
