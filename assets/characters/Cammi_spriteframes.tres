@@ -1,0 +1,49 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": "quieto",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": "caminar",
+"speed": 9.0
+}, {
+"frames": [],
+"loop": false,
+"name": "saltar",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": false,
+"name": "caer",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": false,
+"name": "golpe_ligero",
+"speed": 14.0
+}, {
+"frames": [],
+"loop": false,
+"name": "golpe_pesado",
+"speed": 9.0
+}, {
+"frames": [],
+"loop": false,
+"name": "bloquear",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": "recibir_daño",
+"speed": 9.0
+}, {
+"frames": [],
+"loop": false,
+"name": "nocaut",
+"speed": 5.0
+}]
