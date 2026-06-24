@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4xo3l31yronu"]
 
 [ext_resource type="PackedScene" uid="uid://mp2m28h8sinh" path="res://scenes/personajes/dee_jay.tscn" id="1_e66qu"]
-[ext_resource type="PackedScene" uid="uid://bc6oq6p5viobe" path="res://scenes/personajes/cammy.tscn" id="2_iyvkr"]
+[ext_resource type="PackedScene" uid="uid://bc6oq6p5viobe" path="res://scenes/personajes/Cammy.tscn" id="2_iyvkr"]
 [ext_resource type="PackedScene" uid="uid://bde1nuy30mihl" path="res://scenes/personajes/bison.tscn" id="3_f48f8"]
 
 [node name="Prueba" type="Node2D" unique_id=381850253]

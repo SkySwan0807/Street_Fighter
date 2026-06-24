@@ -622,9 +622,7 @@ _data = {
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_m60ao")
-animation = &"golpe_fuerte"
-frame = 6
-frame_progress = 1.0
+animation = &"patada_fuerte"
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=851210919]
 libraries/ = SubResource("AnimationLibrary_sxm6u")

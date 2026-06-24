@@ -40,6 +40,11 @@
 [ext_resource type="Texture2D" uid="uid://po16ym7fpjwi" path="res://assets/characters/dee_jay/6-0.png" id="17_giot4"]
 [ext_resource type="Texture2D" uid="uid://c4h8ibspxiohg" path="res://assets/characters/dee_jay/6-1.png" id="18_pcf3b"]
 [ext_resource type="Texture2D" uid="uid://b5cy2ha4elxfo" path="res://assets/characters/dee_jay/6-2.png" id="19_1yfhp"]
+[ext_resource type="Texture2D" uid="uid://bvtnxlk4n01fc" path="res://assets/characters/dee_jay/5010-0.png" id="21_jlybo"]
+[ext_resource type="Texture2D" uid="uid://cta3hp72be1n8" path="res://assets/characters/dee_jay/5010-1.png" id="22_tcvx1"]
+[ext_resource type="Texture2D" uid="uid://ct4o2x5akana4" path="res://assets/characters/dee_jay/5010-3.png" id="23_vbgly"]
+[ext_resource type="Texture2D" uid="uid://b8ioa8qq3e11b" path="res://assets/characters/dee_jay/5010-4.png" id="24_06mvm"]
+[ext_resource type="Texture2D" uid="uid://b4akjggw3bw7d" path="res://assets/characters/dee_jay/5010-5.png" id="25_bt4fa"]
 [ext_resource type="Texture2D" uid="uid://cxyudkemrmqyh" path="res://assets/characters/dee_jay/41-0.png" id="30_u8ygf"]
 [ext_resource type="Texture2D" uid="uid://bs7yxnh3mypvc" path="res://assets/characters/dee_jay/41-1.png" id="31_lyx1a"]
 [ext_resource type="Texture2D" uid="uid://jbgaqtwuiiwv" path="res://assets/characters/dee_jay/41-2.png" id="32_5c8o7"]
@@ -170,6 +175,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"caminar_atras",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jlybo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tcvx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vbgly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_06mvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bt4fa")
+}],
+"loop": true,
+"name": &"danio",
 "speed": 5.0
 }, {
 "frames": [{
@@ -469,6 +494,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_vj3fg")
-animation = &"golpe_fuerte"
-frame = 6
-frame_progress = 1.0
+animation = &"bloqueo_agachado"
