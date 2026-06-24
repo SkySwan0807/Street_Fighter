@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Street_Fighter"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b2gv8r4sdkc1e"
+
+[autoload]
+
+Eleccion="*uid://q2nhd4pgt3mk"
 
 [physics]
 

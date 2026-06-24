@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://64yhv5xpqu8g"]
+
+[ext_resource type="Texture2D" uid="uid://damn6qsvf7avr" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Dee Jay.png" id="1_7vwua"]
+
+[resource]
+atlas = ExtResource("1_7vwua")
+region = Rect2(25.547485, 183.1903, 154.6618, 135.32907)

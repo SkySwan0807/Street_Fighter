@@ -1,16 +1,114 @@
-# Godot 4+ specific ignores
+# Creado por https://www.toptal.com/developers/gitignore/api/godot,windows,macos,linux,visualstudiocode
+# Editar en https://www.toptal.com/developers/gitignore?templates=godot,windows,macos,linux,visualstudiocode
+
+### Godot ###
+# Ignorar elementos específicos de Godot 4+
 .godot/
-.nomedia
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
+# Ignora específica de Godot
+.importar/
+exportar.cfg
+export_presets.cfg
 
-# Imported translations (automatically generated from CSV files)
-*.translation
+# Traducciones importadas (generadas automáticamente a partir de archivos CSV)
+*.traducción
 
-# Mono-specific ignores
-.mono/
-data_*/
+# Ignora monoespecífica
+.mononucleosis infecciosa/
+datos_*/
 mono_crash.*.json
+
+### Linux ###
+*~
+
+# Archivos temporales que se pueden crear si un proceso aún tiene abierto un identificador de un archivo eliminado.
+.fuse_hidden*
+
+# Preferencias de directorio de KDE
+.directorio
+
+# Carpeta de papelera de Linux que puede aparecer en cualquier partición o disco
+.Basura-*
+
+# Los archivos .nfs se crean cuando se elimina un archivo abierto pero aún se está accediendo a él.
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.ManzanaDoble
+.LSOverride
+
+# El icono debe terminar con dos \r
+Icono
+
+
+# Miniaturas
+._*
+
+# Archivos que podrían aparecer en la raíz de un volumen
+.RevisionesDocumento-V100
+.fseventsd
+Foco V100
+.ElementosTemporales
+Basura
+.VolumeIcon.icns
+.com.apple.timemachine.nopresentar
+
+# Directorios potencialmente creados en el recurso compartido remoto de AFP
+.AppleDB
+.AppleDesktop
+Carpeta de papelera de red
+Artículos temporales
+.apdisk
+
+### Parche para macOS ###
+# Archivos generados por iCloud
+*.icloud
+
+### Código de Visual Studio ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Historial local para Visual Studio Code
+.historia/
+
+# Extensiones de Visual Studio Code creadas
+*.vsix
+
+### Parche de VisualStudioCode ###
+# Ignorar todo el historial local de archivos
+.historia
+iónido
+
+### Windows ###
+# Archivos de caché de miniaturas de Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Archivo de volcado
+*.stackdump
+
+# Archivo de configuración de la carpeta
+[Dd]esktop.ini
+
+# Papelera de reciclaje utilizada en recursos compartidos de archivos
+$RECICLAJE.CONTENEDOR/
+
+# Archivos del instalador de Windows
+*.taxi
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Accesos directos de Windows
+*.lnk
+
+# Fin de https://www.toptal.com/developers/gitignore/api/godot,windows,macos,linux,visualstudiocode
