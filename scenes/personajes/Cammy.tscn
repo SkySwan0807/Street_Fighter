@@ -333,7 +333,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("41_tnptr")
 }],
-"loop": true,
+"loop": false,
 "name": &"golpe_debil",
 "speed": 5.0
 }, {
@@ -376,7 +376,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("44_nsa0b")
 }],
-"loop": true,
+"loop": false,
 "name": &"golpe_medio",
 "speed": 5.0
 }, {
@@ -622,7 +622,7 @@ _data = {
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_m60ao")
-animation = &"patada_fuerte"
+animation = &"golpe_medio"
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=851210919]
 libraries/ = SubResource("AnimationLibrary_sxm6u")

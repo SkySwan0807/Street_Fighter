@@ -217,16 +217,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 2.0,
+"duration": 1.5,
 "texture": ExtResource("17_ewbq0")
 }, {
-"duration": 2.0,
+"duration": 1.5,
 "texture": ExtResource("18_hmk20")
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_ewbq0")
 }],
-"loop": true,
+"loop": false,
 "name": &"golpe_debil",
 "speed": 5.0
 }, {
@@ -266,7 +266,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_rhxbi")
 }],
-"loop": true,
+"loop": false,
 "name": &"golpe_medio",
 "speed": 5.0
 }, {
@@ -379,5 +379,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_hmk20")
-animation = &"caminar_adelante"
-frame_progress = 0.42488405
+animation = &"golpe_debil"
