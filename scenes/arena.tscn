@@ -42,14 +42,17 @@ collision_mask = 0
 position = Vector2(-62.5, 17.5)
 shape = SubResource("RectangleShape2D_ground")
 debug_color = Color(0, 0.6, 0.69803923, 0)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" unique_id=802601125]
 position = Vector2(-688.25, -303)
 shape = SubResource("RectangleShape2D_7ft05")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" unique_id=246299163]
 position = Vector2(565, -300.25)
 shape = SubResource("RectangleShape2D_4ag8t")
+metadata/_edit_lock_ = true
 
 [node name="Player1" parent="." unique_id=1395960356 instance=ExtResource("2")]
 position = Vector2(200, 630)
@@ -146,8 +149,8 @@ fill_mode = 1
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/HUD" unique_id=1622553254]
-position = Vector2(581, 35)
-scale = Vector2(2.9884622, 3.7500007)
+position = Vector2(588.00006, 35.000004)
+scale = Vector2(2.0111825, 2.2959156)
 texture = ExtResource("4_4ag8t")
 region_enabled = true
 region_rect = Rect2(351.98175, 108.39387, 65.51462, 18.632599)
@@ -158,11 +161,11 @@ modulate = Color(0.827451, 0.14117648, 0.14117648, 1)
 show_behind_parent = true
 top_level = true
 layout_mode = 0
-offset_left = 509.0
-offset_top = 71.0
-offset_right = 656.0
-offset_bottom = 147.0
-scale = Vector2(1, 1.0290294)
+offset_left = 539.0
+offset_top = 60.999992
+offset_right = 686.0
+offset_bottom = 137.0
+scale = Vector2(0.70754933, 0.6967148)
 theme = SubResource("Theme_dpxgc")
 theme_override_constants/line_spacing = 4
 theme_override_font_sizes/font_size = 75
@@ -171,12 +174,11 @@ horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="RoundOverPanel" type="Panel" parent="UI/HUD" unique_id=1908647213]
-visible = false
 layout_mode = 0
-offset_left = 390.0
-offset_top = 260.0
-offset_right = 890.0
-offset_bottom = 460.0
+offset_left = 297.0
+offset_top = 227.0
+offset_right = 797.0
+offset_bottom = 427.0
 
 [node name="WinnerLabel" type="Label" parent="UI/HUD/RoundOverPanel" unique_id=1771515146]
 layout_mode = 0
