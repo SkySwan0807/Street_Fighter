@@ -53,11 +53,6 @@ func start_fight():
 		"res://scenes/arena.tscn"
 	)
 
-func _on_ryu_button_pressed() -> void:
-	select_character(
-		"Ryu",
-		$RyuButton
-	)
 
 func _on_dee_jay_button_pressed() -> void:
 	select_character(

@@ -3,27 +3,13 @@
 [ext_resource type="Script" uid="uid://q2nhd4pgt3mk" path="res://scripts/eleccion.gd" id="1_kupfp"]
 [ext_resource type="Texture2D" uid="uid://if148nqqiddi" path="res://assets/stage/arena-de-pixel-art-street-al-atardecer-con-vibraciones-de-graffiti-para-diseño-de-juegos-o-afiches-377319120.webp" id="2_ty4dq"]
 [ext_resource type="Texture2D" uid="uid://dadmdtrqklcq8" path="res://assets/icons/Salir.tres" id="3_ihc0b"]
-[ext_resource type="Texture2D" uid="uid://bb142v86ft36p" path="res://assets/icons/ryuRetrato.tres" id="3_ty4dq"]
 [ext_resource type="Texture2D" uid="uid://64yhv5xpqu8g" path="res://assets/icons/DeeJayRetrato.tres" id="3_vl7ki"]
 [ext_resource type="Texture2D" uid="uid://bgkekibbacpm3" path="res://assets/icons/CammiRetrato.tres" id="4_r5ylk"]
-[ext_resource type="Texture2D" uid="uid://cqmmfxfjkweha" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png" id="5_2dmo0"]
 [ext_resource type="Texture2D" uid="uid://dphtrvva0mrbl" path="res://assets/icons/MBisonRetrato.tres" id="5_r5ylk"]
 [ext_resource type="Texture2D" uid="uid://damn6qsvf7avr" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Dee Jay.png" id="7_7old1"]
 [ext_resource type="Texture2D" uid="uid://d3clsj4atlnly" path="res://assets/characters/Character Select (Champion Edition).png" id="7_cxbwk"]
 [ext_resource type="Texture2D" uid="uid://b80osksowcmcr" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Cammy.png" id="8_d7phe"]
 [ext_resource type="Texture2D" uid="uid://75oq3tx0cabo" path="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png" id="9_ufkva"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufkva"]
-atlas = ExtResource("5_2dmo0")
-region = Rect2(130.1998, 267.21185, 99.00003, 113.30005)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dmo0"]
-atlas = ExtResource("5_2dmo0")
-region = Rect2(132.42113, 15.526348, 96.47374, 110.32901)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g8u3s"]
-atlas = ExtResource("5_2dmo0")
-region = Rect2(131, 274.258, 98, 106)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80upp"]
 atlas = ExtResource("7_7old1")
@@ -103,27 +89,12 @@ texture = ExtResource("7_cxbwk")
 region_enabled = true
 region_rect = Rect2(153.62955, 140.47217, 126.66794, 17.882538)
 
-[node name="RyuButton" type="TextureButton" parent="." unique_id=2030723270]
-layout_mode = 0
-offset_left = 146.0
-offset_top = 181.0
-offset_right = 241.0373
-offset_bottom = 291.0
-scale = Vector2(1.7045943, 1.7109478)
-size_flags_horizontal = 6
-size_flags_vertical = 10
-size_flags_stretch_ratio = 6.75
-texture_normal = ExtResource("3_ty4dq")
-texture_pressed = SubResource("AtlasTexture_ufkva")
-texture_hover = SubResource("AtlasTexture_2dmo0")
-texture_disabled = SubResource("AtlasTexture_g8u3s")
-
 [node name="DeeJayButton" type="TextureButton" parent="." unique_id=1253178614]
 layout_mode = 0
-offset_left = 701.0
-offset_top = 320.0
-offset_right = 911.0
-offset_bottom = 514.0
+offset_left = 681.0
+offset_top = 166.0
+offset_right = 891.0
+offset_bottom = 360.0
 toggle_mode = true
 texture_normal = ExtResource("3_vl7ki")
 texture_pressed = SubResource("AtlasTexture_80upp")
@@ -133,10 +104,10 @@ stretch_mode = 1
 
 [node name="CammiButton" type="TextureButton" parent="." unique_id=1290930652]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 185.0
-offset_right = 681.0
-offset_bottom = 365.0
+offset_left = 484.0
+offset_top = 344.0
+offset_right = 653.0
+offset_bottom = 524.0
 texture_normal = ExtResource("4_r5ylk")
 texture_pressed = SubResource("AtlasTexture_ihc0b")
 texture_hover = SubResource("AtlasTexture_j60vi")
@@ -145,10 +116,10 @@ stretch_mode = 1
 
 [node name="MBisonButton" type="TextureButton" parent="." unique_id=240213468]
 layout_mode = 0
-offset_left = 310.0
-offset_top = 369.0
-offset_right = 439.0
-offset_bottom = 474.0
+offset_left = 232.0
+offset_top = 194.0
+offset_right = 361.0
+offset_bottom = 299.0
 scale = Vector2(1.6185513, 1.5054919)
 texture_normal = ExtResource("5_r5ylk")
 texture_pressed = SubResource("AtlasTexture_d7phe")
@@ -157,7 +128,6 @@ texture_disabled = SubResource("AtlasTexture_x2bvh")
 stretch_mode = 1
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="RyuButton" to="." method="_on_ryu_button_pressed"]
 [connection signal="pressed" from="DeeJayButton" to="." method="_on_dee_jay_button_pressed"]
 [connection signal="pressed" from="CammiButton" to="." method="_on_cammi_button_pressed"]
 [connection signal="pressed" from="MBisonButton" to="." method="_on_m_bison_button_pressed"]
