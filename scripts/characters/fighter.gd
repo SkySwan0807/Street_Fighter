@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Fighter
 
 enum State {
 	IDLE,
@@ -38,6 +39,15 @@ func _physics_process(_delta):
 					state_golpe_medio(_delta)
 				Potencias.DEBIL:
 					state_golpe_debil(_delta)
+					
+		State.KICK:
+			match potencia:
+				Potencias.FUERTE:
+					state_patada_fuerte(_delta)
+				Potencias.MEDIO:
+					state_patada_medio(_delta)
+				Potencias.DEBIL:
+					state_patada_debil(_delta)
 			
 	move_and_slide()
 			
@@ -64,7 +74,18 @@ func state_idle(_delta):
 	if Input.is_action_just_pressed("golpe_medio_p1"):
 		change_potencia(Potencias.MEDIO)
 		change_state(State.PUNCH)
-
+	
+	if Input.is_action_just_pressed("patada_fuerte_p1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.KICK)
+	
+	if Input.is_action_just_pressed("patada_debil_p1"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.KICK)
+	
+	if Input.is_action_just_pressed("patada_medio_p1"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.KICK)
 
 func state_forward(_delta):
 	$AnimatedSprite2D.play("caminar_adelante")
@@ -105,38 +126,31 @@ func state_golpe_medio(_delta):
 func state_golpe_debil(_delta):
 	velocity.x = 0
 	$AnimatedSprite2D.play("golpe_debil")
+	
+func state_patada_fuerte(_delta):
+	velocity.x = 0
+	$AnimatedSprite2D.play("patada_fuerte")
+
+func state_patada_medio(_delta):
+	velocity.x = 0
+	$AnimatedSprite2D.play("patada_medio")
+
+func state_patada_debil(_delta):
+	velocity.x = 0
+	$AnimatedSprite2D.play("patada_debil")
 
 func change_state(new_state):
 	if state == new_state:
 		return
-
+		
 	state = new_state
-"""
-	match state:
-		State.IDLE:
-			$AnimatedSprite2D.play("idle")
 
-		State.FORWARD:
-			$AnimatedSprite2D.play("caminar_adelante")
-
-		State.BACKWARDS:
-			$AnimatedSprite2D.play("caminar_atras")
-
-		State.PUNCH:
-			match potencia:
-				Potencias.FUERTE:
-					$AnimatedSprite2D.play("golpe_fuerte")
-"""
 func change_potencia(new_potencia):
 	if potencia == new_potencia:
 		return
 	potencia = new_potencia
 	
 func _on_animated_sprite_2d_animation_finished():
-	print("Animación terminada:", $AnimatedSprite2D.animation)
-
-	if ($AnimatedSprite2D.animation == "golpe_fuerte"
-		or $AnimatedSprite2D.animation == "golpe_debil"
-		or $AnimatedSprite2D.animation == "golpe_medio"):
-		print("Cambio de estado a Idle")
-		change_state(State.IDLE)
+	#print("Animación terminada:", $AnimatedSprite2D.animation)
+	#print("Cambio de estado a Idle")
+	change_state(State.IDLE)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cesie1xhq0y08"
-path="res://.godot/imported/Character Select (Champion Edition).png-1e6bb75d1b8da545092030fb6f5fb2db.ctex"
+uid="uid://dfeko6unx5wek"
+path="res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png-ee3ec81ae5be27810106cc259970c9e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Character Select (Champion Edition).png"
-dest_files=["res://.godot/imported/Character Select (Champion Edition).png-1e6bb75d1b8da545092030fb6f5fb2db.ctex"]
+source_file="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png"
+dest_files=["res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png-ee3ec81ae5be27810106cc259970c9e2.ctex"]
 
 [params]
 

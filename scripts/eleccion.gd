@@ -63,7 +63,7 @@ func _on_dee_jay_button_pressed() -> void:
 
 func _on_cammi_button_pressed() -> void:
 	select_character(
-		"Cammi",
+		"Cammy",
 		$CammiButton
 	)
 

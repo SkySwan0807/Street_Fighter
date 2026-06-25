@@ -297,7 +297,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("42_yxoai")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_debil",
 "speed": 5.0
 }, {
@@ -305,7 +305,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("43_gg8fr")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_fuerte",
 "speed": 5.0
 }, {
@@ -379,4 +379,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_hmk20")
-animation = &"golpe_debil"
+animation = &"patada_fuerte"

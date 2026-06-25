@@ -52,7 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://bg4ojinkql4or" path="res://assets/characters/cammy/200-7.png" id="45_3ig5i"]
 [ext_resource type="Texture2D" uid="uid://ckish6djjk32a" path="res://assets/characters/cammy/210-10.png" id="45_jeqjd"]
 [ext_resource type="Texture2D" uid="uid://qfdekjgfv4lm" path="res://assets/characters/cammy/210-11.png" id="46_a0vje"]
-[ext_resource type="Texture2D" uid="uid://cwofa4v2qwlfx" path="res://assets/characters/cammy/0-0.png" id="46_pn4n4"]
+[ext_resource type="Texture2D" uid="uid://cgbqeqr7phu88" path="res://assets/characters/cammy/0-0.png" id="46_pn4n4"]
 [ext_resource type="Texture2D" uid="uid://bjt7du3uuthw3" path="res://assets/characters/cammy/0-1.png" id="47_61mll"]
 [ext_resource type="Texture2D" uid="uid://b2kejw42qh5np" path="res://assets/characters/cammy/210-5.png" id="47_tnptr"]
 [ext_resource type="Texture2D" uid="uid://nj0lb6xv41u5" path="res://assets/characters/cammy/0-2.png" id="48_6is80"]
@@ -467,7 +467,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("76_qqcpk")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_debil",
 "speed": 2.0
 }, {
@@ -490,7 +490,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("82_lahn0")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_fuerte",
 "speed": 5.0
 }, {
@@ -510,7 +510,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("83_0ct5r")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_medio",
 "speed": 5.0
 }, {
@@ -622,7 +622,7 @@ _data = {
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_m60ao")
-animation = &"golpe_medio"
+animation = &"patada_medio"
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=851210919]
 libraries/ = SubResource("AnimationLibrary_sxm6u")

@@ -6,8 +6,8 @@ extends Node2D
 
 const ROUND_TIME: float = 60.0
 
-@onready var player1: Fighter = $Player1
-@onready var player2: Fighter = $Player2
+@onready var player1: Fighter
+@onready var player2: Fighter
 @onready var p1_health_bar: ProgressBar = $UI/HUD/P1HealthBar
 @onready var p2_health_bar: ProgressBar = $UI/HUD/P2HealthBar
 @onready var timer_label: Label = $UI/HUD/TimerLabel
@@ -17,8 +17,23 @@ const ROUND_TIME: float = 60.0
 var time_left: float = ROUND_TIME
 var round_active: bool = true
 
+const CHARACTERS = {
+	"Cammy": preload("res://scenes/personajes/bison.tscn"),
+	"DeeJay": preload("res://scenes/personajes/dee_jay.tscn"),
+	"MBison": preload("res://scenes/personajes/bison.tscn")
+}
 
 func _ready() -> void:
+
+	player1 = CHARACTERS[Eleccion.player1_character].instantiate()
+	player2 = CHARACTERS[Eleccion.player2_character].instantiate()
+
+	add_child(player1)
+	add_child(player2)
+
+	player1.position = Vector2(200, 400)
+	player2.position = Vector2(800, 400)
+
 	player1.opponent = player2
 	player2.opponent = player1
 
@@ -29,10 +44,6 @@ func _ready() -> void:
 
 	round_over_panel.visible = false
 	_update_timer_label()
-	#Aca se les llama a los personajes seleccionados
-	print("Eleccion.player1_character = ", Eleccion.player1_character)
-	print("Eleccion.player2_character = ", Eleccion.player2_character)
-
 
 func _process(delta: float) -> void:
 	if not round_active:

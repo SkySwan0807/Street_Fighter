@@ -361,7 +361,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("59_jww7n")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_debil",
 "speed": 5.0
 }, {
@@ -387,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_onjd1")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_fuerte",
 "speed": 5.0
 }, {
@@ -413,7 +413,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("62_keyes")
 }],
-"loop": true,
+"loop": false,
 "name": &"patada_medio",
 "speed": 5.0
 }, {
@@ -494,4 +494,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_vj3fg")
-animation = &"golpe_medio"
+animation = &"patada_medio"

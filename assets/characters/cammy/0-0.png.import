@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/characters/Character Select (Champion Edition).png.import
-uid="uid://d3clsj4atlnly"
-path="res://.godot/imported/Character Select (Champion Edition).png-1e6bb75d1b8da545092030fb6f5fb2db.ctex"
-========
-uid="uid://cwofa4v2qwlfx"
+uid="uid://cgbqeqr7phu88"
 path="res://.godot/imported/0-0.png-c2943e3182de824a082ad2f7a7905612.ctex"
->>>>>>>> personajes:assets/characters/cammy/0-0.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/characters/Character Select (Champion Edition).png.import
-source_file="res://assets/characters/Character Select (Champion Edition).png"
-dest_files=["res://.godot/imported/Character Select (Champion Edition).png-1e6bb75d1b8da545092030fb6f5fb2db.ctex"]
-========
 source_file="res://assets/characters/cammy/0-0.png"
 dest_files=["res://.godot/imported/0-0.png-c2943e3182de824a082ad2f7a7905612.ctex"]
->>>>>>>> personajes:assets/characters/cammy/0-0.png.import
 
 [params]
 

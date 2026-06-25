@@ -88,7 +88,6 @@ scale = Vector2(2.8354168, 1.7222222)
 texture = ExtResource("4_4ag8t")
 region_enabled = true
 region_rect = Rect2(353.18408, 87.50997, 60.105225, 16.225784)
-metadata/_edit_lock_ = true
 
 [node name="1" type="Sprite2D" parent="UI/HUD/Player 1" unique_id=875136937]
 position = Vector2(-252.93593, 0.82462084)
@@ -148,7 +147,7 @@ value = 100.0
 fill_mode = 1
 show_percentage = false
 
-[node name="Sprite2D" type="Sprite2D" parent="UI/HUD" unique_id=1622553254]
+[node name="TimeLabel" type="Sprite2D" parent="UI/HUD" unique_id=1622553254]
 position = Vector2(588.00006, 35.000004)
 scale = Vector2(2.0111825, 2.2959156)
 texture = ExtResource("4_4ag8t")

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Fighter
+
 
 ## Controlador de personaje de pelea, simple y legible.
 ##

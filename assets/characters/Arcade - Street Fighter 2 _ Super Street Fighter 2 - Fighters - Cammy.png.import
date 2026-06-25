@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cesie1xhq0y08"
-path="res://.godot/imported/Character Select (Champion Edition).png-1e6bb75d1b8da545092030fb6f5fb2db.ctex"
+uid="uid://6f4tjkrr1wam"
+path="res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Cammy.png-7677f478bfecac3acba4da8b1ef9ce0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Character Select (Champion Edition).png"
-dest_files=["res://.godot/imported/Character Select (Champion Edition).png-1e6bb75d1b8da545092030fb6f5fb2db.ctex"]
+source_file="res://assets/characters/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Cammy.png"
+dest_files=["res://.godot/imported/Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Cammy.png-7677f478bfecac3acba4da8b1ef9ce0e.ctex"]
 
 [params]
 
