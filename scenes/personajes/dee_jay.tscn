@@ -105,7 +105,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_tm1ja")
 }],
-"loop": true,
+"loop": false,
 "name": &"agacharse",
 "speed": 5.0
 }, {
@@ -494,4 +494,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_vj3fg")
-animation = &"salto"
+animation = &"agacharse"

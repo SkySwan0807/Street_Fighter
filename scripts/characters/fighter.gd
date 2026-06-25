@@ -12,6 +12,7 @@ enum State {
 	KICK,
 	HURT,
 	JUMP,
+	CROUCH,
 	KO,
 	WIN
 }
@@ -25,7 +26,7 @@ enum Potencias {
 @export_group("Estadísticas")
 @export var max_health: int = 100
 @export var move_speed: float = 220.0
-@export var jump_velocity: float = -420.0
+@export var jump_velocity: float = -500.0
 @export var gravity: float = 1300.0
 
 @export_group("Golpes")
@@ -88,6 +89,9 @@ func _physics_process(_delta):
 		State.JUMP:
 			state_jump(_delta)
 			
+		State.CROUCH:
+			state_crouch(_delta)
+			
 		State.PUNCH:
 			match potencia:
 				Potencias.FUERTE:
@@ -138,6 +142,15 @@ func state_idle(_delta):
 		and is_on_floor()):
 		velocity.y = jump_velocity
 		change_state(State.JUMP)
+		
+	if (Input.is_action_pressed("agacharse_p1") 
+		and player_label == "Jugador_1"
+		and is_on_floor()):
+		change_state(State.CROUCH)
+	elif (Input.is_action_pressed("agacharse_p2") 
+		and player_label == "Jugador_2"
+		and is_on_floor()):
+		change_state(State.CROUCH)
 	
 	if (Input.is_action_pressed("golpe_fuerte_p1") 
 		and player_label == "Jugador_1"):
@@ -246,14 +259,22 @@ func state_jump(_delta):
 		
 	velocity.x = direction * move_speed
 
-	# Reproducir animación de salto
-	if visual.animation != "salto_adelente" and direction > 0:
-		visual.play("salto_adelente")
-	elif visual.animation != "salto":
+	if visual.animation != "salto":
 		visual.play("salto")
 
 	# Cuando toque el suelo, volver a idle
 	if is_on_floor():
+		change_state(State.IDLE)
+
+func state_crouch(_delta):
+	velocity.x = 0
+	if visual.animation != "agacharse":
+		visual.play("agacharse")
+	if (not Input.is_action_pressed("agacharse_p1")
+		and player_label == "Jugador_1"):
+		change_state(State.IDLE)
+	if (not Input.is_action_pressed("agacharse_p2") 
+		and player_label == "Jugador_2"):
 		change_state(State.IDLE)
 
 func state_golpe_fuerte(_delta):
@@ -294,8 +315,9 @@ func change_potencia(new_potencia):
 func _on_animated_sprite_2d_animation_finished():
 	#print("Animación terminada:", $AnimatedSprite2D.animation)
 	#print("Cambio de estado a Idle")
-	if visual.animation != "salto":
-		change_state(State.IDLE)
+	match state:
+		State.PUNCH, State.KICK:
+			change_state(State.IDLE)
 
 func _apply_facing() -> void:
 	visual.flip_h = not facing_right
