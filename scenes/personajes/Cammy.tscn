@@ -34,8 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://f2fr84xujuqg" path="res://assets/characters/cammy/21-11.png" id="32_4di1f"]
 [ext_resource type="Texture2D" uid="uid://n2qrn0g81tp4" path="res://assets/characters/cammy/170-0.png" id="33_3o7ld"]
 [ext_resource type="Texture2D" uid="uid://bdq6d8vp22v1g" path="res://assets/characters/cammy/6-0.png" id="34_vhmb5"]
+[ext_resource type="Texture2D" uid="uid://gonkjfadrf6n" path="res://assets/characters/cammy/5000-10.png" id="34_x6o8l"]
+[ext_resource type="Texture2D" uid="uid://bdboinvbyorcw" path="res://assets/characters/cammy/5000-20.png" id="35_iohy2"]
 [ext_resource type="Texture2D" uid="uid://bnshwy74g3o21" path="res://assets/characters/cammy/6-1.png" id="35_sxm6u"]
 [ext_resource type="Texture2D" uid="uid://dfxyfjvh77a24" path="res://assets/characters/cammy/6-2.png" id="36_5pg5c"]
+[ext_resource type="Texture2D" uid="uid://cebn1ywaqcxpc" path="res://assets/characters/cammy/5000-30.png" id="36_82s8j"]
 [ext_resource type="Texture2D" uid="uid://cmheh52bmftr5" path="res://assets/characters/cammy/5-0.png" id="37_e8r1w"]
 [ext_resource type="Texture2D" uid="uid://b37fygmic7rdn" path="res://assets/characters/cammy/5-1.png" id="38_3npod"]
 [ext_resource type="Texture2D" uid="uid://36tbrfig7exw" path="res://assets/characters/cammy/5-2.png" id="39_jeqjd"]
@@ -46,15 +49,21 @@
 [ext_resource type="Texture2D" uid="uid://djiedqiq2wsdp" path="res://assets/characters/cammy/210-1.png" id="42_5pg5c"]
 [ext_resource type="Texture2D" uid="uid://8h65gd07t8nv" path="res://assets/characters/cammy/200-2.png" id="42_ljhka"]
 [ext_resource type="Texture2D" uid="uid://ccu1gagtfcvjg" path="res://assets/characters/cammy/200-5.png" id="43_5kpmv"]
+[ext_resource type="Texture2D" uid="uid://b4gyt3nymvah6" path="res://assets/characters/cammy/300-0.png" id="43_ci0e0"]
 [ext_resource type="Texture2D" uid="uid://cmcfb2aswxm2j" path="res://assets/characters/cammy/210-3.png" id="43_e8r1w"]
 [ext_resource type="Texture2D" uid="uid://dcnsqg45vrwso" path="res://assets/characters/cammy/210-9.png" id="44_3npod"]
+[ext_resource type="Texture2D" uid="uid://c7km0dcjjoqba" path="res://assets/characters/cammy/300-1.png" id="44_g1meg"]
 [ext_resource type="Texture2D" uid="uid://c7k45jvoryams" path="res://assets/characters/cammy/200-6.png" id="44_nsa0b"]
 [ext_resource type="Texture2D" uid="uid://bg4ojinkql4or" path="res://assets/characters/cammy/200-7.png" id="45_3ig5i"]
 [ext_resource type="Texture2D" uid="uid://ckish6djjk32a" path="res://assets/characters/cammy/210-10.png" id="45_jeqjd"]
+[ext_resource type="Texture2D" uid="uid://bme1jdke1a0ai" path="res://assets/characters/cammy/300-2.png" id="45_kana7"]
 [ext_resource type="Texture2D" uid="uid://qfdekjgfv4lm" path="res://assets/characters/cammy/210-11.png" id="46_a0vje"]
 [ext_resource type="Texture2D" uid="uid://cgbqeqr7phu88" path="res://assets/characters/cammy/0-0.png" id="46_pn4n4"]
+[ext_resource type="Texture2D" uid="uid://drx7lprnympi2" path="res://assets/characters/cammy/300-3.png" id="46_ueko0"]
 [ext_resource type="Texture2D" uid="uid://bjt7du3uuthw3" path="res://assets/characters/cammy/0-1.png" id="47_61mll"]
+[ext_resource type="Texture2D" uid="uid://btb8sbwd0k7va" path="res://assets/characters/cammy/300-4.png" id="47_s5ut2"]
 [ext_resource type="Texture2D" uid="uid://b2kejw42qh5np" path="res://assets/characters/cammy/210-5.png" id="47_tnptr"]
+[ext_resource type="Texture2D" uid="uid://bl7utgv1rr7oq" path="res://assets/characters/cammy/300-5.png" id="48_1dudm"]
 [ext_resource type="Texture2D" uid="uid://nj0lb6xv41u5" path="res://assets/characters/cammy/0-2.png" id="48_6is80"]
 [ext_resource type="Texture2D" uid="uid://ba314bxok2fwc" path="res://assets/characters/cammy/210-6.png" id="48_ljhka"]
 [ext_resource type="Texture2D" uid="uid://c4wsceq85f8wg" path="res://assets/characters/cammy/0-3.png" id="49_qyuri"]
@@ -97,13 +106,18 @@
 [ext_resource type="Texture2D" uid="uid://birw1leulfeao" path="res://assets/characters/cammy/250-0.png" id="74_8myq4"]
 [ext_resource type="Texture2D" uid="uid://b8w8d12dvgx6g" path="res://assets/characters/cammy/250-1.png" id="75_8oal3"]
 [ext_resource type="Texture2D" uid="uid://dvd0gm3kvd3xu" path="res://assets/characters/cammy/185-3.png" id="75_nr2ao"]
+[ext_resource type="Texture2D" uid="uid://cmul4vt5p6yko" path="res://assets/characters/cammy/5030-10.png" id="76_egj1h"]
 [ext_resource type="Texture2D" uid="uid://bg6vqfn6rr51n" path="res://assets/characters/cammy/250-2.png" id="76_qqcpk"]
 [ext_resource type="Texture2D" uid="uid://c3epat0bo0fjo" path="res://assets/characters/cammy/185-4.png" id="76_urvym"]
 [ext_resource type="Texture2D" uid="uid://b6fwy5isc6x4d" path="res://assets/characters/cammy/185-5.png" id="77_1bgiw"]
 [ext_resource type="Texture2D" uid="uid://c6gxtgnvdnmi0" path="res://assets/characters/cammy/250-10.png" id="77_povvj"]
+[ext_resource type="Texture2D" uid="uid://dfbauqs1i8xc6" path="res://assets/characters/cammy/5030-20.png" id="77_w1gpm"]
 [ext_resource type="Texture2D" uid="uid://cdfubbqf2fu8c" path="res://assets/characters/cammy/250-11.png" id="78_4h5hh"]
+[ext_resource type="Texture2D" uid="uid://ubss1oeg4q2n" path="res://assets/characters/cammy/5030-30.png" id="78_an41l"]
 [ext_resource type="Texture2D" uid="uid://dpu6ad337iei3" path="res://assets/characters/cammy/250-12.png" id="79_5335b"]
+[ext_resource type="Texture2D" uid="uid://cm2jgt3nimxci" path="res://assets/characters/cammy/5030-50.png" id="79_av2nl"]
 [ext_resource type="Texture2D" uid="uid://bgpe6mwx5rykv" path="res://assets/characters/cammy/250-13.png" id="80_gdnp3"]
+[ext_resource type="Texture2D" uid="uid://dl6fn723ixlfd" path="res://assets/characters/cammy/5040-10.png" id="80_os0bu"]
 [ext_resource type="Texture2D" uid="uid://ciiw7gumnuhj1" path="res://assets/characters/cammy/250-14.png" id="81_wjoy2"]
 [ext_resource type="Texture2D" uid="uid://dxhcamsd45lp6" path="res://assets/characters/cammy/250-15.png" id="82_lahn0"]
 [ext_resource type="Texture2D" uid="uid://bihlkm3xrgukx" path="res://assets/characters/cammy/250-3.png" id="83_0ct5r"]
@@ -233,6 +247,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("33_3o7ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_x6o8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_iohy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_82s8j")
 }],
 "loop": true,
 "name": &"danio",
@@ -264,6 +287,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"giro_parado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_ci0e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_g1meg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_kana7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ueko0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_s5ut2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_1dudm")
+}],
+"loop": true,
+"name": &"golpe_agachado",
 "speed": 5.0
 }, {
 "frames": [{
@@ -407,6 +453,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_egj1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_w1gpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_an41l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_av2nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_os0bu")
+}],
+"loop": true,
+"name": &"k.o",
 "speed": 5.0
 }, {
 "frames": [{
