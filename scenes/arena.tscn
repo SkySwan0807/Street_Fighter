@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://k73dc8s57sm1"]
 
 [ext_resource type="Script" uid="uid://ckvrjfsl31m6b" path="res://scripts/arena.gd" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://cwbxo3jd10m76" path="res://assets/stage/escenario.jpg" id="2_olpmc"]
 [ext_resource type="Texture2D" uid="uid://0l4puo40yexd" path="res://assets/characters/Game Text, Fonts, & Health Bars.png" id="4_4ag8t"]
 [ext_resource type="FontFile" uid="uid://b1rgk46irddg4" path="res://assets/stage/ARCADE_I.TTF" id="4_7ft05"]
@@ -53,21 +52,6 @@ metadata/_edit_lock_ = true
 position = Vector2(565, -300.25)
 shape = SubResource("RectangleShape2D_4ag8t")
 metadata/_edit_lock_ = true
-
-[node name="Player1" parent="." unique_id=1395960356 instance=ExtResource("2")]
-position = Vector2(200, 630)
-player_label = "Jugador 1"
-
-[node name="Player2" parent="." unique_id=235475205 instance=ExtResource("2")]
-position = Vector2(920, 630)
-player_label = "Jugador 2"
-start_facing_right = false
-key_left = 4194319
-key_right = 4194321
-key_jump = 4194320
-key_light_attack = 74
-key_heavy_attack = 75
-key_block = 4194322
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1806754942]
 

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cnuf3rpiok0ju"]
 
-[ext_resource type="Script" uid="uid://d255kudoav4et" path="res://scripts/characters/fighter.gd" id="1_5kbbp"]
+[ext_resource type="Script" uid="uid://uu8ws4brslv6" path="res://scripts/characters/fighter.gd" id="1_5kbbp"]
+[ext_resource type="Script" uid="uid://bstqypcixc2kk" path="res://scripts/hurtbox.gd" id="2_un5nr"]
+[ext_resource type="Script" uid="uid://x30fjgnkfvyr" path="res://scripts/hitbox.gd" id="3_stky8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k27ay"]
 animations = [{
@@ -125,11 +127,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k27ay"]
-radius = 14.0
-height = 92.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un5nr"]
+size = Vector2(40, 90)
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k27ay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2163"]
+size = Vector2(40, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65vn2"]
+size = Vector2(34, 28)
 
 [node name="Fighter" type="CharacterBody2D" unique_id=961357591]
 script = ExtResource("1_5kbbp")
@@ -139,8 +146,7 @@ sprite_frames = SubResource("SpriteFrames_k27ay")
 animation = &"victoria_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1050385601]
-visible = false
-shape = SubResource("CapsuleShape2D_k27ay")
+shape = SubResource("RectangleShape2D_un5nr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=851210919]
 root_node = NodePath("../AnimationTree")
@@ -149,5 +155,30 @@ root_node = NodePath("../AnimationTree")
 root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeStateMachine_k27ay")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=310376589]
+light_mask = 4
+visibility_layer = 0
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("2_un5nr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=488088475]
+shape = SubResource("RectangleShape2D_w2163")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=243492133]
+visibility_layer = 4
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+script = ExtResource("3_stky8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=644351798]
+light_mask = 0
+visibility_layer = 4
+position = Vector2(37, 0)
+shape = SubResource("RectangleShape2D_65vn2")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

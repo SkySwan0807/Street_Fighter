@@ -1,13 +1,19 @@
 extends CharacterBody2D
 class_name Fighter
 
+signal health_changed(current_health: int, max_health: int)
+signal defeated(fighter: Fighter)
+
 enum State {
 	IDLE,
 	FORWARD,
 	BACKWARDS,
 	PUNCH,
 	KICK,
-	HURT
+	HURT,
+	JUMP,
+	KO,
+	WIN
 }
 
 enum Potencias {
@@ -16,11 +22,59 @@ enum Potencias {
 	FUERTE
 }
 
-var state = State.IDLE
-var potencia = Potencias.DEBIL
-var speed = 200
+@export_group("Estadísticas")
+@export var max_health: int = 100
+@export var move_speed: float = 220.0
+@export var jump_velocity: float = -420.0
+@export var gravity: float = 1300.0
+
+@export_group("Golpes")
+@export var light_damage: int = 8
+@export var light_active_time: float = 0.12
+@export var light_recovery_time: float = 0.18
+@export var light_knockback: float = 90.0
+
+@export var medium_damage: int = 12
+@export var medium_active_time: float = 0.14
+@export var medium_recovery_time: float = 0.26
+@export var medium_knockback: float = 130.0
+
+@export var heavy_damage: int = 16
+@export var heavy_active_time: float = 0.16
+@export var heavy_recovery_time: float = 0.32
+@export var heavy_knockback: float = 170.0
+
+@export_group("Identidad")
+@export var player_label: String = "Jugador"
+
+var state: State = State.IDLE
+var potencia: Potencias = Potencias.DEBIL
+
+var current_health: int
+var facing_right: bool = true
+var attack_phase_timer: float = 0.0
+var attack_id: String = ""
+var hurt_timer: float = 0.0
+
+## Asignado desde la escena de la arena para que el personaje sepa hacia dónde mirar.
+var opponent: Fighter = null
+
+@onready var visual = $AnimatedSprite2D
+@onready var hitbox: Area2D = $Hitbox
+@onready var hurtbox: Area2D = $Hurtbox
+
+func _ready() -> void:
+	current_health = max_health
+	hurtbox.owner_fighter = self
+	hitbox.owner_fighter = self
+	hitbox.monitoring = false
+	_apply_facing()
 
 func _physics_process(_delta):
+	if state in [State.IDLE, State.FORWARD, State.JUMP, State.BACKWARDS]:
+		_face_opponent()
+		
+	velocity.y += gravity * _delta
 	match state:
 		State.IDLE:
 			state_idle(_delta)
@@ -54,8 +108,8 @@ func _physics_process(_delta):
 func state_idle(_delta):
 	
 	velocity.x = 0
-	if $AnimatedSprite2D.animation != "idle":
-		$AnimatedSprite2D.play("idle")
+	if visual.animation != "idle":
+		visual.play("idle")
 
 	if Input.is_action_pressed("derecha_p1"):
 		change_state(State.FORWARD)
@@ -88,28 +142,34 @@ func state_idle(_delta):
 		change_state(State.KICK)
 
 func state_forward(_delta):
-	$AnimatedSprite2D.play("caminar_adelante")
+	if facing_right:
+		visual.play("caminar_adelante")
+	else:
+		visual.play("caminar_atras")
 
 	var direction = Input.get_axis("izquierda_p1", "derecha_p1")
 	
 	if direction == 0:
 		change_state(State.IDLE)
 
-	velocity.x = direction * speed
+	velocity.x = direction * move_speed
 
 	if Input.is_action_just_pressed("golpe_fuerte_p1"):
 		change_potencia(Potencias.FUERTE)
 		change_state(State.PUNCH)
 		
 func state_backwards(_delta):
-	$AnimatedSprite2D.play("caminar_atras")
+	if facing_right:
+		visual.play("caminar_atras")
+	else:
+		visual.play("caminar_adelante")
 
 	var direction = Input.get_axis("izquierda_p1", "derecha_p1")
 	
 	if direction == 0:
 		change_state(State.IDLE)
 
-	velocity.x = direction * speed
+	velocity.x = direction * move_speed
 
 	if Input.is_action_just_pressed("golpe_fuerte_p1"):
 		change_potencia(Potencias.FUERTE)
@@ -117,27 +177,27 @@ func state_backwards(_delta):
 
 func state_golpe_fuerte(_delta):
 	velocity.x = 0
-	$AnimatedSprite2D.play("golpe_fuerte")
+	visual.play("golpe_fuerte")
 
 func state_golpe_medio(_delta):
 	velocity.x = 0
-	$AnimatedSprite2D.play("golpe_medio")
+	visual.play("golpe_medio")
 
 func state_golpe_debil(_delta):
 	velocity.x = 0
-	$AnimatedSprite2D.play("golpe_debil")
+	visual.play("golpe_debil")
 	
 func state_patada_fuerte(_delta):
 	velocity.x = 0
-	$AnimatedSprite2D.play("patada_fuerte")
+	visual.play("patada_fuerte")
 
 func state_patada_medio(_delta):
 	velocity.x = 0
-	$AnimatedSprite2D.play("patada_medio")
+	visual.play("patada_medio")
 
 func state_patada_debil(_delta):
 	velocity.x = 0
-	$AnimatedSprite2D.play("patada_debil")
+	visual.play("patada_debil")
 
 func change_state(new_state):
 	if state == new_state:
@@ -154,3 +214,14 @@ func _on_animated_sprite_2d_animation_finished():
 	#print("Animación terminada:", $AnimatedSprite2D.animation)
 	#print("Cambio de estado a Idle")
 	change_state(State.IDLE)
+
+func _apply_facing() -> void:
+	visual.flip_h = not facing_right
+	
+func _face_opponent() -> void:
+	if opponent == null:
+		return
+
+	facing_right = opponent.global_position.x > global_position.x
+	
+	_apply_facing()

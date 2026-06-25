@@ -18,7 +18,7 @@ var time_left: float = ROUND_TIME
 var round_active: bool = true
 
 const CHARACTERS = {
-	"Cammy": preload("res://scenes/personajes/bison.tscn"),
+	"Cammy": preload("res://scenes/personajes/Cammy.tscn"),
 	"DeeJay": preload("res://scenes/personajes/dee_jay.tscn"),
 	"MBison": preload("res://scenes/personajes/bison.tscn")
 }
@@ -31,11 +31,14 @@ func _ready() -> void:
 	add_child(player1)
 	add_child(player2)
 
-	player1.position = Vector2(200, 400)
-	player2.position = Vector2(800, 400)
+	player1.position = Vector2(200, 600)
+	player2.position = Vector2(800, 600)
 
 	player1.opponent = player2
 	player2.opponent = player1
+	
+	player1.player_label = "jugador 1"
+	player2.player_label = "jugador 2"
 
 	player1.health_changed.connect(_on_p1_health_changed)
 	player2.health_changed.connect(_on_p2_health_changed)
