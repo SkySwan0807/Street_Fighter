@@ -48,11 +48,18 @@
 [ext_resource type="Texture2D" uid="uid://bsy22ifhj2nul" path="res://assets/characters/bison/180-2.png" id="33_hdpye"]
 [ext_resource type="Texture2D" uid="uid://h4dhmqoqrx82" path="res://assets/characters/bison/180-3.png" id="34_v7ono"]
 [ext_resource type="Texture2D" uid="uid://fin5gs5cau5x" path="res://assets/characters/bison/180-4.png" id="35_a06xs"]
+[ext_resource type="Texture2D" uid="uid://4pbikdrj40f" path="res://assets/characters/bison/200-1.png" id="35_n0swm"]
+[ext_resource type="Texture2D" uid="uid://b6g87emfk7yt4" path="res://assets/characters/bison/200-2.png" id="37_65c0a"]
 [ext_resource type="Texture2D" uid="uid://d00bolnfmy4jc" path="res://assets/characters/bison/230-0.png" id="39_135uu"]
 [ext_resource type="Texture2D" uid="uid://bx75gxinwss3q" path="res://assets/characters/bison/230-1.png" id="40_cmjgy"]
 [ext_resource type="Texture2D" uid="uid://f5ac1mp31q3o" path="res://assets/characters/bison/230-2.png" id="41_ccrtq"]
+[ext_resource type="Texture2D" uid="uid://bgxpsrtoux7sy" path="res://assets/characters/bison/5030-0.png" id="41_jat2k"]
+[ext_resource type="Texture2D" uid="uid://gdkj4i7dswo6" path="res://assets/characters/bison/5030-30.png" id="42_bktjx"]
 [ext_resource type="Texture2D" uid="uid://bo3aw8i2l1ftp" path="res://assets/characters/bison/230-3.png" id="42_yxoai"]
+[ext_resource type="Texture2D" uid="uid://dk5wgf80t44xq" path="res://assets/characters/bison/5040-0.png" id="43_a0b3x"]
 [ext_resource type="Texture2D" uid="uid://b8ihh8e7pvs6v" path="res://assets/characters/bison/330-0.png" id="43_gg8fr"]
+[ext_resource type="Texture2D" uid="uid://57uow6sk565i" path="res://assets/characters/bison/5040-20.png" id="44_hri1h"]
+[ext_resource type="Texture2D" uid="uid://qqf8uiblnloj" path="res://assets/characters/bison/5040-10.png" id="45_135uu"]
 [ext_resource type="Texture2D" uid="uid://bku05dlfjoybm" path="res://assets/characters/bison/1200-0.png" id="48_tiplu"]
 [ext_resource type="Texture2D" uid="uid://cl53ie6ubi4h7" path="res://assets/characters/bison/1200-1.png" id="49_8k232"]
 [ext_resource type="Texture2D" uid="uid://bc6nnq38bii28" path="res://assets/characters/bison/1200-2.png" id="50_a5tdd"]
@@ -213,7 +220,35 @@ animations = [{
 "texture": ExtResource("21_e4y4n")
 }],
 "loop": true,
-"name": &"golpe_cercarno_debil",
+"name": &"golpe_cercano_debil",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ewbq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_n0swm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_hmk20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_65c0a")
+}],
+"loop": true,
+"name": &"golpe_cercano_fuerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_e4y4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_hri1h")
+}],
+"loop": true,
+"name": &"golpe_cercano_medio",
 "speed": 5.0
 }, {
 "frames": [{
@@ -286,6 +321,68 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("41_jat2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_bktjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_a0b3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_hri1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_135uu")
+}],
+"loop": true,
+"name": &"k.o",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_135uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cmjgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ccrtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_yxoai")
+}],
+"loop": false,
+"name": &"patada_cercano_debil",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_gg8fr")
+}],
+"loop": false,
+"name": &"patada_cercano_fuerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_135uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cmjgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ccrtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_yxoai")
+}],
+"loop": false,
+"name": &"patada_cercano_medio",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("39_135uu")
 }, {
 "duration": 1.0,
@@ -307,6 +404,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"patada_fuerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_135uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cmjgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ccrtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_yxoai")
+}],
+"loop": false,
+"name": &"patada_medio",
 "speed": 5.0
 }, {
 "frames": [{
@@ -375,8 +489,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_dw65n"]
+resource_name = "agacharse"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7dl4p"]
+_data = {
+&"agacharse": SubResource("Animation_dw65n")
+}
+
 [node name="Fighter" unique_id=961357591 instance=ExtResource("1_7hrgj")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_hmk20")
-animation = &"patada_fuerte"
+animation = &"k.o"
+frame = 2
+frame_progress = 0.9136674
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=851210919]
+libraries/ = SubResource("AnimationLibrary_7dl4p")

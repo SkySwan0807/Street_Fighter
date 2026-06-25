@@ -78,12 +78,21 @@
 [ext_resource type="Texture2D" uid="uid://c0gb8umsahbt0" path="res://assets/characters/dee_jay/251-1.png" id="53_gwdbr"]
 [ext_resource type="Texture2D" uid="uid://db1hn3aye67oa" path="res://assets/characters/dee_jay/251-2.png" id="54_onjd1"]
 [ext_resource type="Texture2D" uid="uid://3bq02rpec7cx" path="res://assets/characters/dee_jay/251-3.png" id="55_cdcjk"]
+[ext_resource type="Texture2D" uid="uid://d2y6i0328dg6m" path="res://assets/characters/dee_jay/5030-0.png" id="57_7by6t"]
+[ext_resource type="Texture2D" uid="uid://bs1be4cix8xer" path="res://assets/characters/dee_jay/5030-10.png" id="58_yomba"]
+[ext_resource type="Texture2D" uid="uid://d1qhj2yf3gjfl" path="res://assets/characters/dee_jay/5030-20.png" id="59_f61qr"]
 [ext_resource type="Texture2D" uid="uid://c18u1xufvokwv" path="res://assets/characters/dee_jay/230-0.png" id="59_jww7n"]
 [ext_resource type="Texture2D" uid="uid://jb5e1kymm5mf" path="res://assets/characters/dee_jay/230-1.png" id="60_2igqc"]
+[ext_resource type="Texture2D" uid="uid://dtdktgl3ts7t" path="res://assets/characters/dee_jay/5030-30.png" id="60_j4ol7"]
+[ext_resource type="Texture2D" uid="uid://yi8vkkdeqfyl" path="res://assets/characters/dee_jay/5030-50.png" id="61_2arb2"]
 [ext_resource type="Texture2D" uid="uid://w3jv8tvrx810" path="res://assets/characters/dee_jay/240-0.png" id="61_2ffre"]
+[ext_resource type="Texture2D" uid="uid://dp80cwvwiqwcw" path="res://assets/characters/dee_jay/5030-40.png" id="62_jww7n"]
 [ext_resource type="Texture2D" uid="uid://g1qt7yld28ya" path="res://assets/characters/dee_jay/240-1.png" id="62_keyes"]
+[ext_resource type="Texture2D" uid="uid://ciqiou3bbgtc3" path="res://assets/characters/dee_jay/5040-10.png" id="63_2igqc"]
 [ext_resource type="Texture2D" uid="uid://cqktw7hqswqji" path="res://assets/characters/dee_jay/240-2.png" id="63_v5tyd"]
+[ext_resource type="Texture2D" uid="uid://e65d68iua0g" path="res://assets/characters/dee_jay/231-0.png" id="64_2ffre"]
 [ext_resource type="Texture2D" uid="uid://bbvsf3is80nva" path="res://assets/characters/dee_jay/240-3.png" id="64_2lmn1"]
+[ext_resource type="Texture2D" uid="uid://bltvvttka58i8" path="res://assets/characters/dee_jay/231-1.png" id="65_keyes"]
 [ext_resource type="Texture2D" uid="uid://djfi6i534vc6i" path="res://assets/characters/dee_jay/181-0.png" id="76_h6d65"]
 [ext_resource type="Texture2D" uid="uid://cv6nsyk6yt2wk" path="res://assets/characters/dee_jay/181-1.png" id="77_wymtc"]
 [ext_resource type="Texture2D" uid="uid://cm87iuvwwt86m" path="res://assets/characters/dee_jay/181-2.png" id="78_400vs"]
@@ -92,6 +101,12 @@
 [ext_resource type="Texture2D" uid="uid://cv0h4ry0r22bt" path="res://assets/characters/dee_jay/181-5.png" id="81_ukv1r"]
 [ext_resource type="Texture2D" uid="uid://cgkls02wjjxca" path="res://assets/characters/dee_jay/181-6.png" id="82_d1w6w"]
 [ext_resource type="Texture2D" uid="uid://bd8ddn3w6pp4" path="res://assets/characters/dee_jay/181-7.png" id="83_2jajs"]
+[ext_resource type="Texture2D" uid="uid://b8iksquah1wrh" path="res://assets/characters/dee_jay/1601-0.png" id="102_v5tyd"]
+[ext_resource type="Texture2D" uid="uid://i2ui4oijd75y" path="res://assets/characters/dee_jay/1601-1.png" id="103_2lmn1"]
+[ext_resource type="Texture2D" uid="uid://8spbe1tkv3au" path="res://assets/characters/dee_jay/1601-2.png" id="104_h6d65"]
+[ext_resource type="Texture2D" uid="uid://dhe0ygu5l4dkm" path="res://assets/characters/dee_jay/1602-0.png" id="105_wymtc"]
+[ext_resource type="Texture2D" uid="uid://c6s8fjbha3kjw" path="res://assets/characters/dee_jay/1602-1.png" id="106_400vs"]
+[ext_resource type="Texture2D" uid="uid://c72lqcr8wlydu" path="res://assets/characters/dee_jay/1602-2.png" id="107_7eiqg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vj3fg"]
 animations = [{
@@ -227,6 +242,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("39_1gg3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_bjeqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_t1bsg")
+}],
+"loop": true,
+"name": &"golpe_cercano_debil",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("34_vbgly")
 }, {
 "duration": 1.0,
@@ -243,6 +272,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"golpe_cercano_fuerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_f61qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_j4ol7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_2arb2")
+}],
+"loop": true,
+"name": &"golpe_cercano_medio",
 "speed": 5.0
 }, {
 "frames": [{
@@ -327,6 +370,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("57_7by6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_yomba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_f61qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_j4ol7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_2arb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_jww7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_2igqc")
+}],
+"loop": true,
+"name": &"k.o",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_2ffre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_keyes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_2ffre")
+}],
+"loop": true,
+"name": &"patada_cercano_debil",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("52_rl4ik")
 }, {
 "duration": 1.0,
@@ -346,6 +429,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"patada_cercano_fuerte",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_jww7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2igqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_jww7n")
+}],
+"loop": true,
+"name": &"patada_cercano_medio",
 "speed": 5.0
 }, {
 "frames": [{
@@ -488,10 +585,33 @@ animations = [{
 "loop": true,
 "name": &"victoria_1",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102_v5tyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_2lmn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_h6d65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_wymtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_400vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_7eiqg")
+}],
+"loop": true,
+"name": &"victoria_2",
+"speed": 5.0
 }]
 
 [node name="Fighter" unique_id=961357591 instance=ExtResource("1_ctlmd")]
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_vj3fg")
-animation = &"patada_medio"
+animation = &"golpe_debil"
