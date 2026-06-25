@@ -6,8 +6,8 @@ signal defeated(fighter: Fighter)
 
 enum State {
 	IDLE,
-	FORWARD,
-	BACKWARDS,
+	LEFT,
+	RIGHT,
 	PUNCH,
 	KICK,
 	HURT,
@@ -45,7 +45,7 @@ enum Potencias {
 @export var heavy_knockback: float = 170.0
 
 @export_group("Identidad")
-@export var player_label: String = "Jugador"
+@export var player_label: String
 
 var state: State = State.IDLE
 var potencia: Potencias = Potencias.DEBIL
@@ -71,7 +71,7 @@ func _ready() -> void:
 	_apply_facing()
 
 func _physics_process(_delta):
-	if state in [State.IDLE, State.FORWARD, State.JUMP, State.BACKWARDS]:
+	if state in [State.IDLE, State.LEFT, State.JUMP, State.RIGHT]:
 		_face_opponent()
 		
 	velocity.y += gravity * _delta
@@ -79,11 +79,14 @@ func _physics_process(_delta):
 		State.IDLE:
 			state_idle(_delta)
 
-		State.FORWARD:
-			state_forward(_delta)
+		State.RIGHT:
+			state_right(_delta)
 			
-		State.BACKWARDS:
-			state_backwards(_delta)
+		State.LEFT:
+			state_left(_delta)
+			
+		State.JUMP:
+			state_jump(_delta)
 			
 		State.PUNCH:
 			match potencia:
@@ -110,44 +113,97 @@ func state_idle(_delta):
 	velocity.x = 0
 	if visual.animation != "idle":
 		visual.play("idle")
-
-	if Input.is_action_pressed("derecha_p1"):
-		change_state(State.FORWARD)
 	
-	if Input.is_action_pressed("izquierda_p1"):
-		change_state(State.BACKWARDS)
-
-	if Input.is_action_just_pressed("golpe_fuerte_p1"):
+	if (Input.is_action_pressed("derecha_p1") 
+		and player_label == "Jugador_1"):
+		change_state(State.RIGHT)
+	elif (Input.is_action_pressed("derecha_p2") 
+		and player_label == "Jugador_2"):
+		change_state(State.RIGHT)
+	
+	if (Input.is_action_pressed("izquierda_p1") 
+		and player_label == "Jugador_1"):
+		change_state(State.LEFT)
+	elif (Input.is_action_pressed("izquierda_p2") 
+		and player_label == "Jugador_2"):
+		change_state(State.LEFT)
+		
+	if (Input.is_action_pressed("salto_p1") 
+		and player_label == "Jugador_1"
+		and is_on_floor()):
+		velocity.y = jump_velocity
+		change_state(State.JUMP)
+	elif (Input.is_action_pressed("salto_p2") 
+		and player_label == "Jugador_2"
+		and is_on_floor()):
+		velocity.y = jump_velocity
+		change_state(State.JUMP)
+	
+	if (Input.is_action_pressed("golpe_fuerte_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_fuerte_p2") 
+		and player_label == "Jugador_2"):
 		change_potencia(Potencias.FUERTE)
 		change_state(State.PUNCH)
 	
-	if Input.is_action_just_pressed("golpe_debil_p1"):
+	if (Input.is_action_pressed("golpe_debil_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_debil_p2") 
+		and player_label == "Jugador_2"):
 		change_potencia(Potencias.DEBIL)
 		change_state(State.PUNCH)
 	
-	if Input.is_action_just_pressed("golpe_medio_p1"):
+	if (Input.is_action_pressed("golpe_medio_p1") 
+		and player_label == "Jugador_1"):
 		change_potencia(Potencias.MEDIO)
 		change_state(State.PUNCH)
-	
-	if Input.is_action_just_pressed("patada_fuerte_p1"):
+	elif (Input.is_action_pressed("golpe_medio_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.PUNCH)
+
+	if (Input.is_action_pressed("patada_fuerte_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_fuerte_p2") 
+		and player_label == "Jugador_2"):
 		change_potencia(Potencias.FUERTE)
 		change_state(State.KICK)
 	
-	if Input.is_action_just_pressed("patada_debil_p1"):
-		change_potencia(Potencias.DEBIL)
-		change_state(State.KICK)
-	
-	if Input.is_action_just_pressed("patada_medio_p1"):
+	if (Input.is_action_pressed("patada_medio_p1") 
+		and player_label == "Jugador_1"):
 		change_potencia(Potencias.MEDIO)
 		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_medio_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.KICK)
+		
+	if (Input.is_action_pressed("patada_debil_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_debil_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.KICK)
 
-func state_forward(_delta):
+func state_right(_delta):
+	var direction
 	if facing_right:
 		visual.play("caminar_adelante")
 	else:
 		visual.play("caminar_atras")
-
-	var direction = Input.get_axis("izquierda_p1", "derecha_p1")
+		
+	if player_label == "Jugador_1":
+		direction = Input.get_axis("izquierda_p1", "derecha_p1")
+	elif player_label == "Jugador_2":
+		direction = Input.get_axis("izquierda_p2", "derecha_p2")
 	
 	if direction == 0:
 		change_state(State.IDLE)
@@ -158,13 +214,18 @@ func state_forward(_delta):
 		change_potencia(Potencias.FUERTE)
 		change_state(State.PUNCH)
 		
-func state_backwards(_delta):
+func state_left(_delta):
+	
+	var direction
 	if facing_right:
 		visual.play("caminar_atras")
 	else:
 		visual.play("caminar_adelante")
 
-	var direction = Input.get_axis("izquierda_p1", "derecha_p1")
+	if player_label == "Jugador_1":
+		direction = Input.get_axis("izquierda_p1", "derecha_p1")
+	elif player_label == "Jugador_2":
+		direction = Input.get_axis("izquierda_p2", "derecha_p2")
 	
 	if direction == 0:
 		change_state(State.IDLE)
@@ -174,6 +235,26 @@ func state_backwards(_delta):
 	if Input.is_action_just_pressed("golpe_fuerte_p1"):
 		change_potencia(Potencias.FUERTE)
 		change_state(State.PUNCH)
+
+func state_jump(_delta):
+	# Permitir movimiento horizontal en el aire
+	var direction
+	if player_label == "Jugador_1":
+		direction = Input.get_axis("izquierda_p1", "derecha_p1")
+	elif player_label == "Jugador_2":
+		direction = Input.get_axis("izquierda_p2", "derecha_p2")
+		
+	velocity.x = direction * move_speed
+
+	# Reproducir animación de salto
+	if visual.animation != "salto_adelente" and direction > 0:
+		visual.play("salto_adelente")
+	elif visual.animation != "salto":
+		visual.play("salto")
+
+	# Cuando toque el suelo, volver a idle
+	if is_on_floor():
+		change_state(State.IDLE)
 
 func state_golpe_fuerte(_delta):
 	velocity.x = 0
@@ -213,7 +294,8 @@ func change_potencia(new_potencia):
 func _on_animated_sprite_2d_animation_finished():
 	#print("Animación terminada:", $AnimatedSprite2D.animation)
 	#print("Cambio de estado a Idle")
-	change_state(State.IDLE)
+	if visual.animation != "salto":
+		change_state(State.IDLE)
 
 func _apply_facing() -> void:
 	visual.flip_h = not facing_right

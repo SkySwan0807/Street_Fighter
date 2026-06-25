@@ -322,7 +322,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_ewbq0")
 }],
-"loop": true,
+"loop": false,
 "name": &"salto",
 "speed": 5.0
 }, {
@@ -342,7 +342,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_iky36")
 }],
-"loop": true,
+"loop": false,
 "name": &"salto_adelante",
 "speed": 5.0
 }, {
@@ -379,4 +379,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_hmk20")
-animation = &"patada_fuerte"
+animation = &"salto_adelante"

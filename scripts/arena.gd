@@ -37,8 +37,8 @@ func _ready() -> void:
 	player1.opponent = player2
 	player2.opponent = player1
 	
-	player1.player_label = "jugador 1"
-	player2.player_label = "jugador 2"
+	player1.player_label = "Jugador_1"
+	player2.player_label = "Jugador_2"
 
 	player1.health_changed.connect(_on_p1_health_changed)
 	player2.health_changed.connect(_on_p2_health_changed)
