@@ -63,7 +63,7 @@ Videojuego de lucha 2D para dos jugadores desarrollado en Godot 4. Dos jugadores
 ## Estructura del proyecto
 
 ```
-dev/
+Street_Fighter/
   assets/
     audio/              -- Archivos de música (menu.mp3, select.mp3, fight_intro.mp3, fight_bg.mp3)
     characters/         -- Sprites y spritesheets de cada personaje
