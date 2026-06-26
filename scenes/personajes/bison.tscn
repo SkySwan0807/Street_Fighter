@@ -501,9 +501,7 @@ _data = {
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_hmk20")
-animation = &"k.o"
-frame = 2
-frame_progress = 0.9136674
+animation = &"caminar_adelante"
 
 [node name="AnimationPlayer" parent="." index="2" unique_id=851210919]
 libraries/ = SubResource("AnimationLibrary_7dl4p")

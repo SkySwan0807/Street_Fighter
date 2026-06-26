@@ -143,7 +143,7 @@ script = ExtResource("1_5kbbp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_k27ay")
-animation = &"victoria_2"
+animation = &"golpe_debil"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1050385601]
 shape = SubResource("RectangleShape2D_un5nr")

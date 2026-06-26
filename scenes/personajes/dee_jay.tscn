@@ -614,4 +614,3 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1963044189]
 sprite_frames = SubResource("SpriteFrames_vj3fg")
-animation = &"golpe_debil"
