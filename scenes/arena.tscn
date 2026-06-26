@@ -66,19 +66,15 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Player 1" type="Sprite2D" parent="UI/HUD" unique_id=131651854]
-position = Vector2(957, 26.999954)
-scale = Vector2(2.8354168, 1.7222222)
-texture = ExtResource("4_4ag8t")
-region_enabled = true
-region_rect = Rect2(353.18408, 87.50997, 60.105225, 16.225784)
-
-[node name="1" type="Sprite2D" parent="UI/HUD/Player 1" unique_id=875136937]
-position = Vector2(-252.93593, 0.82462084)
-scale = Vector2(0.66080517, 0.9424869)
-texture = ExtResource("4_4ag8t")
-region_enabled = true
-region_rect = Rect2(102.99044, 167.73776, 13.995216, 19.5085)
+[node name="P1Name" type="Label" parent="UI/HUD" unique_id=1664883598]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 400.0
+offset_bottom = 46.0
+theme = SubResource("Theme_dpxgc")
+theme_override_font_sizes/font_size = 22
+text = "P1"
 
 [node name="P1HealthBg" type="ColorRect" parent="UI/HUD" unique_id=657750807]
 layout_mode = 0
@@ -97,21 +93,16 @@ offset_bottom = 84.0
 value = 100.0
 show_percentage = false
 
-[node name="Player2" type="Sprite2D" parent="UI/HUD" unique_id=1524246511]
-position = Vector2(129.00003, 32)
-scale = Vector2(2.7966135, 1.8333333)
-texture = ExtResource("4_4ag8t")
-region_enabled = true
-region_rect = Rect2(353.18408, 87.54642, 60.105225, 16.189339)
-metadata/_edit_lock_ = true
-
-[node name="2" type="Sprite2D" parent="UI/HUD/Player2" unique_id=1168497888]
-position = Vector2(338.98135, -4.363636)
-scale = Vector2(0.6398719, 0.857143)
-texture = ExtResource("4_4ag8t")
-region_enabled = true
-region_rect = Rect2(116.10607, 166.70819, 19.084389, 21.20488)
-metadata/_edit_lock_ = true
+[node name="P2Name" type="Label" parent="UI/HUD" unique_id=648124169]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 16.0
+offset_right = 1100.0
+offset_bottom = 46.0
+theme = SubResource("Theme_dpxgc")
+theme_override_font_sizes/font_size = 22
+text = "P2"
+horizontal_alignment = 2
 
 [node name="P2HealthBg" type="ColorRect" parent="UI/HUD" unique_id=1215117957]
 layout_mode = 0

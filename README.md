@@ -24,7 +24,6 @@
 ### Archivos de animación (SpriteFrames)
 Cada personaje tiene un archivo `.tres` en `assets/characters/` que debes abrir y rellenar.
 **Mientras estén vacíos, el personaje no se verá en la arena. Al rellenarlos aparecerá automáticamente.**
-- `Ryu_spriteframes.tres`
 - `DeeJay_spriteframes.tres`
 - `Cammi_spriteframes.tres`
 - `MBison_spriteframes.tres`
@@ -33,7 +32,7 @@ Cada personaje tiene un archivo `.tres` en `assets/characters/` que debes abrir 
 
 1. **Abre el proyecto en Godot 4.6**
 
-2. **Selecciona el archivo `.tres` del personaje** en el panel FileSystem (ej: `assets/characters/Ryu_spriteframes.tres`)
+2. **Selecciona el archivo `.tres` del personaje** en el panel FileSystem (ej: `assets/characters/DeeJay_spriteframes.tres`)
 
 3. **En el Inspector**, haz clic en "SpriteFrames" y luego en el botón "Array [x]" o "Open" para abrir el editor de SpriteFrames
 
@@ -71,7 +70,6 @@ Cada personaje usa su propio spritesheet. Los archivos ya están importados en e
 
 | Personaje | Spritesheet |
 |-----------|-------------|
-| Ryu | `Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Ryu.png` |
 | DeeJay | `Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Dee Jay.png` |
 | Cammi | `Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Cammy.png` |
 | M.Bison | `Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png` |

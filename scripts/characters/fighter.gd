@@ -47,6 +47,7 @@ enum Potencias {
 
 @export_group("Identidad")
 @export var player_label: String
+@export var start_facing_right: bool = true
 
 var state: State = State.IDLE
 var potencia: Potencias = Potencias.DEBIL
@@ -63,9 +64,11 @@ var opponent: Fighter = null
 @onready var visual = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var hurtbox: Area2D = $Hurtbox
+@onready var hitbox_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 
 func _ready() -> void:
 	current_health = max_health
+	facing_right = start_facing_right
 	hurtbox.owner_fighter = self
 	hitbox.owner_fighter = self
 	hitbox.monitoring = false
@@ -109,7 +112,14 @@ func _physics_process(_delta):
 					state_patada_medio(_delta)
 				Potencias.DEBIL:
 					state_patada_debil(_delta)
-			
+
+		State.HURT:
+			_process_hurt(_delta)
+
+		State.KO:
+			velocity.x = move_toward(velocity.x, 0.0, move_speed * _delta)
+			velocity.y += gravity * _delta
+
 	move_and_slide()
 			
 func state_idle(_delta):
@@ -223,9 +233,59 @@ func state_right(_delta):
 
 	velocity.x = direction * move_speed
 
-	if Input.is_action_just_pressed("golpe_fuerte_p1"):
+	if (Input.is_action_pressed("golpe_fuerte_p1") 
+		and player_label == "Jugador_1"):
 		change_potencia(Potencias.FUERTE)
 		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_fuerte_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.PUNCH)
+
+	if (Input.is_action_pressed("golpe_medio_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_medio_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.PUNCH)
+
+	if (Input.is_action_pressed("golpe_debil_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_debil_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.PUNCH)
+
+	if (Input.is_action_pressed("patada_fuerte_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_fuerte_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.KICK)
+
+	if (Input.is_action_pressed("patada_medio_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_medio_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.KICK)
+
+	if (Input.is_action_pressed("patada_debil_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_debil_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.KICK)
 		
 func state_left(_delta):
 	
@@ -245,9 +305,59 @@ func state_left(_delta):
 
 	velocity.x = direction * move_speed
 
-	if Input.is_action_just_pressed("golpe_fuerte_p1"):
+	if (Input.is_action_pressed("golpe_fuerte_p1") 
+		and player_label == "Jugador_1"):
 		change_potencia(Potencias.FUERTE)
 		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_fuerte_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.PUNCH)
+
+	if (Input.is_action_pressed("golpe_medio_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_medio_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.PUNCH)
+
+	if (Input.is_action_pressed("golpe_debil_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.PUNCH)
+	elif (Input.is_action_pressed("golpe_debil_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.PUNCH)
+
+	if (Input.is_action_pressed("patada_fuerte_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_fuerte_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.FUERTE)
+		change_state(State.KICK)
+
+	if (Input.is_action_pressed("patada_medio_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_medio_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.MEDIO)
+		change_state(State.KICK)
+
+	if (Input.is_action_pressed("patada_debil_p1") 
+		and player_label == "Jugador_1"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.KICK)
+	elif (Input.is_action_pressed("patada_debil_p2") 
+		and player_label == "Jugador_2"):
+		change_potencia(Potencias.DEBIL)
+		change_state(State.KICK)
 
 func state_jump(_delta):
 	# Permitir movimiento horizontal en el aire
@@ -280,26 +390,44 @@ func state_crouch(_delta):
 func state_golpe_fuerte(_delta):
 	velocity.x = 0
 	visual.play("golpe_fuerte")
+	hitbox.damage = heavy_damage
+	hitbox.knockback = heavy_knockback
+	hitbox.monitoring = true
 
 func state_golpe_medio(_delta):
 	velocity.x = 0
 	visual.play("golpe_medio")
+	hitbox.damage = medium_damage
+	hitbox.knockback = medium_knockback
+	hitbox.monitoring = true
 
 func state_golpe_debil(_delta):
 	velocity.x = 0
 	visual.play("golpe_debil")
+	hitbox.damage = light_damage
+	hitbox.knockback = light_knockback
+	hitbox.monitoring = true
 	
 func state_patada_fuerte(_delta):
 	velocity.x = 0
 	visual.play("patada_fuerte")
+	hitbox.damage = heavy_damage
+	hitbox.knockback = heavy_knockback
+	hitbox.monitoring = true
 
 func state_patada_medio(_delta):
 	velocity.x = 0
 	visual.play("patada_medio")
+	hitbox.damage = medium_damage
+	hitbox.knockback = medium_knockback
+	hitbox.monitoring = true
 
 func state_patada_debil(_delta):
 	velocity.x = 0
 	visual.play("patada_debil")
+	hitbox.damage = light_damage
+	hitbox.knockback = light_knockback
+	hitbox.monitoring = true
 
 func change_state(new_state):
 	if state == new_state:
@@ -313,14 +441,50 @@ func change_potencia(new_potencia):
 	potencia = new_potencia
 	
 func _on_animated_sprite_2d_animation_finished():
-	#print("Animación terminada:", $AnimatedSprite2D.animation)
-	#print("Cambio de estado a Idle")
 	match state:
 		State.PUNCH, State.KICK:
+			hitbox.monitoring = false
 			change_state(State.IDLE)
+		State.HURT:
+			change_state(State.IDLE)
+
+func _process_hurt(_delta: float) -> void:
+	hurt_timer -= _delta
+	velocity.x = move_toward(velocity.x, 0.0, move_speed * _delta * 3.0)
+	if visual.animation != "danio":
+		visual.play("danio")
+	if hurt_timer <= 0.0:
+		change_state(State.IDLE)
+
+func take_damage(amount: int, knockback: float, attacker: Node) -> void:
+	if state == State.KO:
+		return
+
+	var push_dir := -1.0 if facing_right else 1.0
+	if attacker and attacker is Node2D:
+		push_dir = -1.0 if attacker.global_position.x > global_position.x else 1.0
+
+	velocity.x = push_dir * knockback
+	velocity.y = -120.0
+
+	current_health = max(current_health - amount, 0)
+	health_changed.emit(current_health, max_health)
+
+	if current_health <= 0:
+		_die()
+	else:
+		state = State.HURT
+		hurt_timer = 0.3
+
+func _die() -> void:
+	state = State.KO
+	hitbox.monitoring = false
+	visual.play("danio")
+	defeated.emit(self)
 
 func _apply_facing() -> void:
 	visual.flip_h = not facing_right
+	hitbox_shape.position.x = 37.0 if facing_right else -37.0
 	
 func _face_opponent() -> void:
 	if opponent == null:

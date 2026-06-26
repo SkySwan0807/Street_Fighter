@@ -5,9 +5,10 @@ var click_count = 0
 var player1_character = ""
 var player2_character = ""
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if ResourceLoader.exists("res://assets/audio/select.mp3"):
+		var select_music := load("res://assets/audio/select.mp3") as AudioStream
+		GameManager.play_music(select_music)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,13 +46,11 @@ func start_fight():
 
 	#Los personajes elegidos se guardan en una variable global llamado 
 	#Eleccion.player1_character	
-	Eleccion.player1_character = player1_character
-	Eleccion.player2_character = player2_character
+	GameManager.player1_character = player1_character
+	GameManager.player2_character = player2_character
 
 
-	get_tree().change_scene_to_file(
-		"res://scenes/arena.tscn"
-	)
+	GameManager.start_fight()
 
 
 func _on_dee_jay_button_pressed() -> void:

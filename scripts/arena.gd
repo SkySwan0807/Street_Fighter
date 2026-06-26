@@ -8,6 +8,8 @@ const ROUND_TIME: float = 60.0
 
 @onready var player1: Fighter
 @onready var player2: Fighter
+@onready var p1_name_label: Label = $UI/HUD/P1Name
+@onready var p2_name_label: Label = $UI/HUD/P2Name
 @onready var p1_health_bar: ProgressBar = $UI/HUD/P1HealthBar
 @onready var p2_health_bar: ProgressBar = $UI/HUD/P2HealthBar
 @onready var timer_label: Label = $UI/HUD/TimerLabel
@@ -25,8 +27,11 @@ const CHARACTERS = {
 
 func _ready() -> void:
 
-	player1 = CHARACTERS[Eleccion.player1_character].instantiate()
-	player2 = CHARACTERS[Eleccion.player2_character].instantiate()
+	player1 = CHARACTERS[GameManager.player1_character].instantiate()
+	player2 = CHARACTERS[GameManager.player2_character].instantiate()
+
+	player1.start_facing_right = true
+	player2.start_facing_right = false
 
 	add_child(player1)
 	add_child(player2)
@@ -44,6 +49,18 @@ func _ready() -> void:
 	player2.health_changed.connect(_on_p2_health_changed)
 	player1.defeated.connect(_on_fighter_defeated)
 	player2.defeated.connect(_on_fighter_defeated)
+
+	p1_name_label.text = GameManager.player1_character.to_upper()
+	p2_name_label.text = GameManager.player2_character.to_upper()
+
+	if ResourceLoader.exists("res://assets/audio/fight_intro.mp3"):
+		var intro := load("res://assets/audio/fight_intro.mp3") as AudioStream
+		GameManager.play_music(intro, false)
+		await get_tree().create_timer(1.0).timeout
+
+	if ResourceLoader.exists("res://assets/audio/fight_bg.mp3"):
+		var bg := load("res://assets/audio/fight_bg.mp3") as AudioStream
+		GameManager.play_music(bg)
 
 	round_over_panel.visible = false
 	_update_timer_label()
