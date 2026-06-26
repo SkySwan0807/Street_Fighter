@@ -1,86 +1,125 @@
-# Street_Fighter
+# Street Fighter
 
-## 🎮 Controles
+![JUEGO](JUEGO.png)
 
-| Acción | Player 1 | Player 2 |
-|--------|----------|----------|
-| Izquierda | A | ← |
-| Derecha | D | → |
-| Saltar | W | ↑ |
-| Golpe ligero | F | J |
-| Golpe pesado | G | K |
-| Bloquear | S | ↓ |
+Videojuego de lucha 2D para dos jugadores desarrollado en Godot 4. Dos jugadores eligen su personaje y se enfrentan en una arena con sistema de combate completo.
 
-> **⚠️ Nota:** Al probar el juego ahora, los personajes se verán **invisibles** en la arena porque los SpriteFrames aún están vacíos. Una vez que se agreguen los frames a cada `*_spriteframes.tres`, los personajes aparecerán con sus sprites y animaciones.
+## Características
 
----
+- 2 jugadores local (mismo teclado)
+- 3 personajes seleccionables
+- 6 tipos de ataque (golpe y patada: débil, medio, fuerte)
+- Sistema de daño con hitbox y hurtbox
+- HUD con barras de vida, nombres y temporizador
+- Música de fondo en menú y combate
+- Fin de ronda por KO o tiempo
 
-## 🎨 Guía para agregar animaciones a los personajes
+## Controles
 
-### Requisitos
-- Tener Godot 4.6 instalado
-- Tener los spritesheets de los personajes (ya están importados en `assets/characters/`)
+### Jugador 1 (Teclado)
 
-### Archivos de animación (SpriteFrames)
-Cada personaje tiene un archivo `.tres` en `assets/characters/` que debes abrir y rellenar.
-**Mientras estén vacíos, el personaje no se verá en la arena. Al rellenarlos aparecerá automáticamente.**
-- `DeeJay_spriteframes.tres`
-- `Cammi_spriteframes.tres`
-- `MBison_spriteframes.tres`
+| Acción | Tecla |
+|--------|-------|
+| Moverse izquierda | A |
+| Moverse derecha | D |
+| Saltar | W |
+| Agacharse | S |
+| Golpe fuerte | O |
+| Golpe medio | I |
+| Golpe débil | U |
+| Patada fuerte | L |
+| Patada media | K |
+| Patada débil | J |
 
-### Pasos para cada personaje
+### Jugador 2 (Teclado)
 
-1. **Abre el proyecto en Godot 4.6**
+| Acción | Tecla |
+|--------|-------|
+| Moverse izquierda | ← |
+| Moverse derecha | → |
+| Saltar | ↑ |
+| Agacharse | ↓ |
+| Golpe fuerte | 6 (teclado numérico) |
+| Golpe medio | 5 (teclado numérico) |
+| Golpe débil | 4 (teclado numérico) |
+| Patada fuerte | 3 (teclado numérico) |
+| Patada media | 2 (teclado numérico) |
+| Patada débil | 1 (teclado numérico) |
 
-2. **Selecciona el archivo `.tres` del personaje** en el panel FileSystem (ej: `assets/characters/DeeJay_spriteframes.tres`)
+## Personajes
 
-3. **En el Inspector**, haz clic en "SpriteFrames" y luego en el botón "Array [x]" o "Open" para abrir el editor de SpriteFrames
+- DeeJay
+- Cammy
+- M.Bison
 
-4. **Agrega las siguientes animaciones** (nombres exactos, sin errores):
-   ```
-   quieto
-   caminar
-   saltar
-   caer
-   golpe_ligero
-   golpe_pesado
-   bloquear
-   recibir_daño
-   nocaut
-   ```
+## Cómo ejecutar
 
-5. **Para cada animación:**
-   - Selecciona la animación en la lista superior del editor de SpriteFrames
-   - Arrastra los frames del spritesheet (PNG) desde el FileSystem a la línea de tiempo
-   - Ajusta la velocidad (FPS) según el movimiento:
-     - `quieto`: 4-6 FPS (respiración)
-     - `caminar`: 8-10 FPS
-     - `saltar` / `caer`: 6-8 FPS
-     - `golpe_ligero`: 12-15 FPS (rápido)
-     - `golpe_pesado`: 8-10 FPS
-     - `bloquear`: 4-6 FPS
-     - `recibir_daño`: 8-10 FPS
-     - `nocaut`: 4-6 FPS
-   - **Loop**: marca esta opción para animaciones que se repiten (`quieto`, `caminar`). Desmárcala para las que no (`golpe_ligero`, `golpe_pesado`, `saltar`, `caer`, `bloquear`, `recibir_daño`, `nocaut`)
+1. Abrir el proyecto en Godot 4.6
+2. Presionar F5
+3. En el menú principal, presionar "Iniciar"
+4. P1 elige un personaje, luego P2 elige el suyo
+5. ¡A combatir!
 
-6. **Guarda** el archivo (Ctrl+S)
+## Estructura del proyecto
 
-### Mapeo de animaciones por personaje
-Cada personaje usa su propio spritesheet. Los archivos ya están importados en el proyecto:
+```
+dev/
+  assets/
+    audio/              -- Archivos de música (menu.mp3, select.mp3, fight_intro.mp3, fight_bg.mp3)
+    characters/         -- Sprites y spritesheets de cada personaje
+    icons/              -- Recursos AtlasTexture para botones
+    stage/              -- Fondos de escenario y tipografía ARCADE_I.TTF
+  scenes/
+    main_menu.tscn      -- Menú principal
+    EleccionPersonaje.tscn -- Pantalla de selección de personajes
+    arena.tscn          -- Escena de combate
+    Fighter.tscn        -- Escena base del personaje
+    player.tscn         -- Escena de prueba
+    personajes/         -- Escenas específicas de cada personaje
+      bison.tscn
+      Cammy.tscn
+      dee_jay.tscn
+  scripts/
+    game_manager.gd     -- Estado global del juego (autoload)
+    arena.gd            -- Control de ronda y HUD
+    eleccion.gd         -- Lógica de selección de personajes
+    main_menu.gd        -- Navegación del menú principal
+    player.gd           -- Script de prueba
+    characters/
+      fighter.gd        -- Clase Fighter con sistema de combate
+    hitbox.gd           -- Area2D para aplicar daño
+    hurtbox.gd          -- Area2D para recibir daño
+```
 
-| Personaje | Spritesheet |
-|-----------|-------------|
-| DeeJay | `Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Dee Jay.png` |
-| Cammi | `Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - Cammy.png` |
-| M.Bison | `Arcade - Street Fighter 2 _ Super Street Fighter 2 - Fighters - M. Bison.png` |
+## Sistema de combate
 
-### Probar en el juego
-1. Ejecuta el proyecto (F5)
-2. Selecciona el personaje
-3. Al entrar en combate, el personaje mostrará los sprites que hayas asignado. Si los SpriteFrames están vacíos, no se verá nada (es normal hasta que se agreguen los frames).
+El personaje funciona con una máquina de estados:
 
-### Notas importantes
-- Los nombres de las animaciones deben coincidir **exactamente** (incluyendo mayúsculas/minúsculas y guiones bajos)
-- Si una animación falta, el juego mostrará un error en la consola
-- Todas las animaciones deben existir, aunque sea con un solo frame
-- Cada personaje tiene su propio archivo `.tres` independiente
+- **IDLE** — estado de reposo, espera input
+- **LEFT / RIGHT** — desplazamiento horizontal
+- **JUMP** — salto con movimiento horizontal
+- **CROUCH** — posición agachado
+- **PUNCH / KICK** — ataques con 3 potencias cada uno (DEBIL, MEDIO, FUERTE)
+- **HURT** — recuperación tras recibir daño
+- **KO** — derrota cuando la vida llega a 0
+- **WIN** — victoria (reservado)
+
+Cada ataque tiene daño, knockback, tiempo activo y tiempo de recuperación propios.
+
+El facing se ajusta automáticamente hacia el oponente.
+
+La ronda termina cuando un jugador llega a 0 de vida (KO) o cuando el temporizador de 60 segundos llega a 0.
+
+## Arquitectura
+
+- **GameManager** (autoload): singleton central que almacena los personajes seleccionados, controla la música de fondo y maneja transiciones entre escenas
+- **Arena**: controla la ronda, instancia los personajes dinámicamente según la selección, actualiza el HUD (barras de vida, nombres, temporizador) y maneja el fin del combate
+- **Fighter**: clase base con máquina de estados, sistema de inputs, física, facing automático y gestión de daño
+- **Hitbox** (Area2D): detecta colisiones con hurtboxes enemigos y aplica daño y knockback
+- **Hurtbox** (Area2D): recibe golpes y redirige el daño al Fighter propietario
+
+## Créditos
+
+- Lógica y código: Desarrollador
+- Animaciones de personajes: Amigo
+- Motor: Godot 4.6
